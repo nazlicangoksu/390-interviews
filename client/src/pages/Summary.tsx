@@ -69,8 +69,8 @@ export default function Summary() {
 
   const reviewedConcepts = Object.entries(session.conceptFeedback || {});
   const selectedTopicNames = session.selectedTopics
-    .map((tid) => topics.find((t) => t.id === tid)?.name || tid)
-    .join(', ');
+    .map((tid) => topics.find((t) => t.id === tid)?.name || tid);
+  const allTopicNames = [...selectedTopicNames, ...(session.customTopics || [])].join(', ');
 
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleDateString('en-US', {
@@ -126,7 +126,7 @@ export default function Summary() {
           </div>
           <div>
             <span className="text-stone-500">Topics:</span>{' '}
-            <span className="text-stone-800">{selectedTopicNames || 'None selected'}</span>
+            <span className="text-stone-800">{allTopicNames || 'None selected'}</span>
           </div>
           <div>
             <span className="text-stone-500">Status:</span>{' '}
@@ -141,7 +141,7 @@ export default function Summary() {
       <div className="grid grid-cols-3 gap-4 mb-8">
         <div className="bg-white rounded-xl border border-stone-200 p-4 text-center">
           <div className="text-3xl font-light text-stone-800">
-            {session.selectedTopics.length}
+            {session.selectedTopics.length + (session.customTopics?.length || 0)}
           </div>
           <div className="text-sm text-stone-500">Topics Selected</div>
         </div>
