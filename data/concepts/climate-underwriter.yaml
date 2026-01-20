@@ -1,0 +1,37 @@
+id: climate-underwriter
+name: The Climate Underwriter
+tagline: >
+  An AI platform that predicts climate risk for any asset, anywhere, at any time
+  horizon—and makes that prediction available to anyone who needs it.
+category: New Science/Tech
+layer: Enabler
+image: climate-underwriter.png
+topics:
+  - finance
+  - adaptation
+  - infrastructure
+
+details:
+  - title: Data ingestion
+    description: >
+      Combines satellite imagery, weather history, climate models, soil data, water
+      data, infrastructure maps, insurance claims, commodity prices, and scientific
+      literature into one system.
+
+  - title: Risk prediction
+    description: >
+      For any location and time horizon (1 year, 10 years, 50 years), outputs
+      probabilities of drought, flood, fire, heat, storm, crop yield changes,
+      water availability, infrastructure stress, and supply chain disruption.
+
+  - title: Product delivery
+    description: >
+      Sells predictions to insurers (better pricing), investors (asset valuation),
+      companies (supply chain planning), governments (infrastructure planning),
+      and farmers (planting decisions).
+
+  - title: Standardization
+    description: >
+      Creates "climate risk scores" that become industry-standard inputs—like credit
+      scores, but for climate exposure. Every financial product eventually needs
+      this number.

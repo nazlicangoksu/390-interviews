@@ -1,0 +1,35 @@
+id: ecosystem-stake
+name: Ecosystem Stake
+tagline: >
+  A company that lets you buy shares in a specific ecosystem—a forest, wetland,
+  reef, or watershed—where value appreciates as the ecosystem recovers.
+category: New Financial Structure
+layer: Market Maker
+image: ecosystem-stake.png
+topics:
+  - nature
+  - carbon
+  - finance
+
+details:
+  - title: Acquisition
+    description: >
+      Identifies and acquires degraded ecosystems with high restoration potential—
+      coastal wetlands, degraded forests, damaged coral reefs, depleted watersheds.
+
+  - title: Restoration
+    description: >
+      Invests in active restoration: replanting, rewilding, water flow repair,
+      invasive species removal, protection from extractive use.
+
+  - title: Revenue generation
+    description: >
+      Monetizes the healthy ecosystem through multiple streams: carbon credits from
+      sequestration, biodiversity credits from species recovery, water service
+      payments from downstream users, sustainable harvest licenses, research access
+      fees, and ecotourism.
+
+  - title: Shareholder returns
+    description: >
+      Investors own equity. Dividends paid from revenue streams. Share value tied
+      to ecosystem health metrics—verified by satellite, eDNA, and ground monitoring.

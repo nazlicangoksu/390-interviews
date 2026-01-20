@@ -1,0 +1,50 @@
+topics:
+  - id: mitigation
+    name: Mitigation
+    description: Reducing emissions at source
+    color: green
+
+  - id: adaptation
+    name: Adaptation & Resilience
+    description: Building systems that withstand climate impacts
+    color: blue
+
+  - id: nature
+    name: Nature & Biodiversity
+    description: Protecting and restoring ecosystems
+    color: emerald
+
+  - id: water
+    name: Water Security
+    description: Ensuring water availability and quality
+    color: cyan
+
+  - id: energy
+    name: Clean Energy
+    description: Transition to renewable energy systems
+    color: yellow
+
+  - id: agriculture
+    name: Sustainable Agriculture
+    description: Regenerative food systems
+    color: lime
+
+  - id: carbon
+    name: Carbon Markets
+    description: Carbon credits, removal, and trading
+    color: slate
+
+  - id: transition
+    name: Just Transition
+    description: Workforce and community transition support
+    color: orange
+
+  - id: infrastructure
+    name: Climate Infrastructure
+    description: Physical assets for climate resilience
+    color: stone
+
+  - id: finance
+    name: Climate Finance Innovation
+    description: New financial structures for climate
+    color: purple

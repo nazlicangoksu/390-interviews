@@ -1,0 +1,32 @@
+id: climate-fomo-fund
+name: The Climate FOMO Fund
+tagline: >
+  A climate investment vehicle where the primary value proposition is exclusivity
+  and social proof—explicitly leveraging status anxiety.
+category: New Financial Structure
+layer: Market Maker
+image: climate-fomo-fund.png
+topics:
+  - finance
+
+details:
+  - title: Curated scarcity
+    description: >
+      Strict limits on who can invest. Net worth floor. Invitation only. Annual
+      capacity caps. Waiting lists. "We turned down $200M last quarter."
+
+  - title: Visible membership
+    description: >
+      Investor events designed to be seen. Annual meetings at high-profile locations.
+      Branded merchandise. LinkedIn-ready credentials. Being in the fund is a
+      status signal.
+
+  - title: Deal preview access
+    description: >
+      Members see opportunities before others. First allocation rights. Co-investment
+      privileges. Information asymmetry as a benefit.
+
+  - title: Performance secondary
+    description: >
+      The fund might perform well, but that's not really the point. The point is
+      membership in a group that signals values, sophistication, and access.

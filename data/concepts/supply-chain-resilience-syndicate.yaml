@@ -1,0 +1,37 @@
+id: supply-chain-resilience-syndicate
+name: The Supply Chain Resilience Syndicate
+tagline: >
+  A platform that convenes competing companies to jointly invest in the ecosystems
+  their supply chains depend on—making resilience a shared infrastructure cost.
+category: New Business Model
+layer: Direct Solution
+image: supply-chain-resilience-syndicate.png
+topics:
+  - nature
+  - agriculture
+  - adaptation
+
+details:
+  - title: Convenes competitors
+    description: >
+      Brings together 5-15 companies sharing supply chain exposure to the same
+      ecosystems. All chocolate companies sourcing from West Africa. All apparel
+      from water-stressed cotton regions.
+
+  - title: Maps shared dependencies
+    description: >
+      Shows each company which ecosystems they depend on, and who shares that
+      dependency. "You, Unilever, Nestlé, and Danone all source from watersheds
+      60% degraded."
+
+  - title: Structures collective investment
+    description: >
+      Creates joint ventures where competitors fund ecosystem restoration together.
+      Cost-sharing proportional to supply chain exposure. Benefits shared
+      proportionally. No free riders.
+
+  - title: Deploys and measures
+    description: >
+      Executes restoration—reforestation, watershed protection, regenerative
+      agriculture. Provides auditable metrics: "$X invested, Y% exposure reduced,
+      Z disruption costs avoided."

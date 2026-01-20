@@ -1,0 +1,37 @@
+id: transition-corps
+name: The Transition Corps
+tagline: >
+  A national service program that employs young people in climate work for 2 years—
+  building the next generation of climate workforce while getting actual work done.
+category: New Business Model
+layer: Enabler
+image: transition-corps.png
+topics:
+  - transition
+  - nature
+  - energy
+
+details:
+  - title: Recruitment
+    description: >
+      Recruits 18-26 year olds for paid, full-time, 2-year service terms.
+      Competitive application. Living stipend, housing, healthcare, and
+      education benefits.
+
+  - title: Training
+    description: >
+      8-week boot camp covering climate science, practical skills (solar
+      installation, ecosystem restoration, energy auditing, community organizing),
+      and professional development.
+
+  - title: Deployment
+    description: >
+      Places corps members with host organizations: climate startups that need
+      hands, municipalities doing resilience planning, farms transitioning to
+      regenerative, conservation organizations, clean energy installers.
+
+  - title: Alumni pipeline
+    description: >
+      After 2 years, corps members have skills, network, and experience. Feeds
+      talent into climate economy. Some start companies. Some join government.
+      Some go to graduate school. All are climate-literate for life.

@@ -1,0 +1,34 @@
+id: transition-workforce-company
+name: The Transition Workforce Company
+tagline: >
+  A staffing company that employs fossil fuel workers and deploys them to clean
+  energy projects—making "just transition" a product, not a slogan.
+category: New Business Model
+layer: Transition Bridge
+image: transition-workforce-company.png
+topics:
+  - transition
+  - energy
+
+details:
+  - title: Employment
+    description: >
+      Hires workers from declining fossil industries—oil rig crews, coal miners,
+      pipeline welders, refinery operators. Provides W-2 employment, benefits,
+      and job security.
+
+  - title: Retraining
+    description: >
+      Builds training programs that translate existing skills to clean energy:
+      welders become solar installers, rig operators become geothermal drillers,
+      electrical workers move to grid buildout.
+
+  - title: Deployment
+    description: >
+      Contracts with clean energy developers who need crews. Instead of hiring
+      individuals, companies hire trained teams ready to work.
+
+  - title: Continuous placement
+    description: >
+      As projects finish, workers rotate to the next project. The company manages
+      the pipeline—workers never face unemployment between gigs.

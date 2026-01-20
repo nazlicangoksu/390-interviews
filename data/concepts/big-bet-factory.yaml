@@ -1,0 +1,38 @@
+id: big-bet-factory
+name: The Big Bet Factory
+tagline: >
+  A company that creates pre-competitive climate coalitions—bringing together
+  competitors to fund solutions too big for any single player.
+category: New Business Model
+layer: Market Maker
+image: big-bet-factory.png
+topics:
+  - finance
+  - infrastructure
+  - transition
+
+details:
+  - title: Problem identification
+    description: >
+      Identifies climate challenges that require collective action (supply chain
+      decarbonization, material transitions, infrastructure buildout). Problems
+      where individual company action creates competitive disadvantage.
+
+  - title: Coalition assembly
+    description: >
+      Recruits 5-15 competing companies who share the problem. Structures legal
+      agreements that enable collaboration without antitrust issues. Beyond the
+      Bag for plastics. Beyond the Packet for single-serve. Beyond the Grid for
+      electrification.
+
+  - title: Capital aggregation
+    description: >
+      Pools committed capital into joint ventures or shared investment vehicles.
+      $50M from 10 companies creates a $500M deployment capacity that no single
+      company would risk alone.
+
+  - title: Execution management
+    description: >
+      Hires operators, manages investments, coordinates shared IP, and distributes
+      benefits proportionally. Companies get outcomes without building internal
+      capabilities.

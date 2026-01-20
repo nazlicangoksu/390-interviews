@@ -1,0 +1,38 @@
+id: climate-compass
+name: Climate Compass
+tagline: >
+  A platform that models future livability at the hyperlocal level and provides
+  financial products enabling proactive relocation before climate disasters
+  strike.
+category: New Science/Tech
+layer: Enabler
+image: climate-compass.png
+topics:
+  - adaptation
+  - finance
+  - infrastructure
+details:
+  - title: Builds livability forecasts
+    description: >
+      Uses phone-based surveys, satellite data, and climate models to score
+      locations on a 10-30 year livability trajectory. Not just "will it flood"
+      but "will there be jobs, water, functioning infrastructure." Granular to
+      the neighborhood level.
+  - title: Sells intelligence upstream
+    description: >
+      Licenses livability forecasts to insurers pricing long-term policies,
+      banks underwriting mortgages, and institutional investors stress-testing
+      real estate portfolios. They need to know which places are viable in
+      2040—and they'll pay for that clarity.
+  - title: Opens relocation accounts downstream
+    description: >
+      Offers individuals in high-risk zones a "Climate Relocation Savings
+      Account." Users contribute monthly; climate adaptation facilities and
+      philanthropies provide matching funds. When livability scores cross
+      thresholds, funds unlock for moving costs, job transition, housing
+      deposits.
+  - title: Advises on managed retreat
+    description: >
+      Consults with municipalities facing inevitable abandonment of certain
+      areas. Helps design voluntary buyout programs, relocation incentives, and
+      transition timelines that don't wait for disaster to force the issue.

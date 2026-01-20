@@ -1,0 +1,35 @@
+id: natural-capital-partners
+name: Natural Capital Partners
+tagline: >
+  A company that helps corporations invest in the natural systems their businesses
+  depend on—and captures value from those investments.
+category: New Business Model
+layer: Direct Solution
+image: natural-capital-partners.png
+topics:
+  - nature
+  - agriculture
+  - water
+
+details:
+  - title: Dependency mapping
+    description: >
+      Shows a company exactly which ecosystems their supply chain depends on.
+      "Your cotton comes from regions facing 40% water stress increase by 2035."
+
+  - title: Investment design
+    description: >
+      Creates custom portfolios of nature-based investments that reduce their
+      specific risks: watershed restoration, soil health programs, pollinator
+      habitat, coastal restoration where their facilities sit.
+
+  - title: Return capture
+    description: >
+      Structures investments so the company gets supply chain stability (avoided
+      disruption), first access to sustainable-certified products, carbon/biodiversity
+      credits they can use or sell, and insurance premium reductions.
+
+  - title: Aggregation
+    description: >
+      Pools corporate demand to fund larger projects. Ten food companies who all
+      depend on the same watershed fund one big restoration project together.

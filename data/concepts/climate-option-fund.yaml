@@ -1,0 +1,40 @@
+id: climate-option-fund
+name: The Climate Option Fund
+tagline: >
+  A fund that invests in climate solutions we hope we'll never need—pricing the
+  option value of having them ready if we do.
+category: New Financial Structure
+layer: Enabler
+image: climate-option-fund.png
+topics:
+  - finance
+  - adaptation
+  - mitigation
+
+details:
+  - title: Scenario mapping
+    description: >
+      Identifies climate solutions that aren't commercially viable under "best case"
+      warming scenarios, but become critical under worse outcomes. Direct air capture
+      at scale. Extreme heat infrastructure for 50°C days. Managed retreat planning.
+      Food system redundancy for crop failure cascades.
+
+  - title: Option pricing
+    description: >
+      Uses financial models (similar to pricing derivatives or cat bonds) to value
+      the "optionality" of having solutions ready. Even if there's only a 15% chance
+      we hit 3°C and need massive DAC deployment, the expected value of having it
+      ready can justify billions in investment today.
+
+  - title: Trigger-linked instruments
+    description: >
+      Creates financial products where returns are tied to climate thresholds being
+      crossed—similar to how cat bonds pay out when a hurricane exceeds Category 4.
+      Investors provide capital to develop solutions and get paid when specific
+      warming levels, tipping points, or impact thresholds are reached.
+
+  - title: Pre-need development
+    description: >
+      Funds R&D, pilots, and early commercialization for solutions that don't have
+      current market demand but would face capacity constraints if needed suddenly.
+      Builds the infrastructure now, so it's ready to scale if scenarios worsen.

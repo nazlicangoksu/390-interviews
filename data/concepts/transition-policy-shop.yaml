@@ -1,0 +1,35 @@
+id: transition-policy-shop
+name: The Transition Policy Shop
+tagline: >
+  A for-profit company that helps climate businesses navigate policy—lobbying,
+  regulatory strategy, and coalition building as a service.
+category: New Business Model
+layer: Enabler
+image: transition-policy-shop.png
+topics:
+  - finance
+  - transition
+
+details:
+  - title: Regulatory navigation
+    description: >
+      Helps climate companies understand and navigate regulations. "Here's how to
+      get your carbon removal methodology approved. Here's how to qualify for IRA
+      tax credits. Here's how to get permitted in California."
+
+  - title: Policy intelligence
+    description: >
+      Tracks every relevant policy development—federal, state, international. Sends
+      clients real-time alerts when something affects their business. "New EPA rule
+      dropping in 60 days. Here's what it means for you."
+
+  - title: Advocacy
+    description: >
+      Lobbies on behalf of climate industry. Represents the sector to policymakers.
+      Builds coalitions across companies to push for supportive policy.
+
+  - title: Revolving door
+    description: >
+      Hires former regulators, congressional staff, and agency officials. They know
+      where the bodies are buried. Clients get access to expertise that would take
+      years to build internally.

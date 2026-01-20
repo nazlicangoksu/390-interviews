@@ -1,0 +1,37 @@
+id: cooling-utility
+name: The Cooling Utility
+tagline: >
+  A company that sells cool spaces—not air conditioners—using whatever mix of
+  solutions works best.
+category: New Business Model
+layer: Direct Solution
+image: cooling-utility.png
+topics:
+  - adaptation
+  - energy
+  - infrastructure
+
+details:
+  - title: Outcome contracts
+    description: >
+      Signs agreements with buildings, campuses, and neighborhoods: "We guarantee
+      indoor temperatures of 72°F for $X/month." Customers pay for comfort, not
+      equipment.
+
+  - title: Solution mix
+    description: >
+      Deploys the most efficient combination for each situation: district cooling
+      systems (shared infrastructure), building retrofits (insulation, glazing,
+      shading), smart controls and demand management, urban trees and shade
+      structures, cool roofs and pavements, high-efficiency AC where needed.
+
+  - title: Efficiency capture
+    description: >
+      Uses 40-60% less energy than conventional AC by optimizing the mix. Profit
+      comes from the gap between what customers pay and what solutions cost to
+      operate.
+
+  - title: Grid services
+    description: >
+      Aggregates cooling load to provide grid flexibility—shifting demand, storing
+      thermal energy, reducing peak strain. Additional revenue from utilities.

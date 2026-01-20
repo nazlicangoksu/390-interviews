@@ -1,0 +1,33 @@
+id: shared-diligence-syndicate
+name: The Shared Diligence Syndicate
+tagline: >
+  A platform where family offices pool their climate deal due diligence—turning
+  research from competitive advantage into collective infrastructure.
+category: New Business Model
+layer: Enabler
+image: shared-diligence-syndicate.png
+topics:
+  - finance
+
+details:
+  - title: DD repository
+    description: >
+      When any member completes due diligence on a climate opportunity, they upload
+      it to the shared platform. Technical memos. Reference calls. Site visit notes.
+      Risk assessments.
+
+  - title: Syndication engine
+    description: >
+      Members who want to participate in a deal after reading shared DD can join
+      the syndicate. Automatic pro-rata allocation. Coordinated term negotiation.
+
+  - title: Collective leverage
+    description: >
+      When 15 family offices want the same terms, they negotiate together. Better
+      pricing. Better governance rights. Better information rights. Deal quality
+      improves because issuers want syndicate access.
+
+  - title: Network effects
+    description: >
+      The more DD in the system, the more valuable membership becomes. First mover
+      advantage for early members who contribute most.

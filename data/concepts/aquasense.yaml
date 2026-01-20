@@ -1,0 +1,40 @@
+id: aquasense
+name: AquaSense
+tagline: >
+  A hardware and data company that deploys soil sensors and AI-driven irrigation
+  recommendations to smallholder farmers—but makes money not from farmers, but
+  from the water utilities, agricultural lenders, and food companies who benefit
+  when farmers use less water and default less often.
+category: New Science/Tech
+layer: Direct Solution
+image: aquasense.png
+topics:
+  - water
+  - agriculture
+  - finance
+  - nature
+  - adaptation
+details:
+  - title: Distributes sensors through existing networks
+    description: >
+      Partners with agricultural input suppliers, microfinance institutions, and
+      farmer cooperatives to distribute low-cost soil moisture sensors. Farmers
+      get sensors free or near-free. The sensor is the trojan horse; the data is
+      the product.
+  - title: Delivers recommendations via basic phones
+    description: >
+      Sends SMS-based irrigation recommendations calibrated to each farmer's
+      specific soil, crop, and weather conditions. No smartphone required. No
+      app to download. Tells farmers when to irrigate and how much—saving 20-40%
+      of water while maintaining or improving yields.
+  - title: Sells water savings upstream
+    description: >
+      Water utilities in stressed basins pay for verified agricultural water
+      savings that reduce pressure on municipal supply. Payment per cubic meter
+      saved, measured and audited through sensor network.
+  - title: De-risks agricultural lending
+    description: >
+      Licenses predictive analytics to microfinance institutions and
+      agricultural lenders. Farmers using the system have lower crop failure
+      rates and better repayment. Lenders pay for risk scoring and early warning
+      on portfolio stress.

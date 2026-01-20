@@ -1,0 +1,37 @@
+id: supply-chain-climate-insurer
+name: The Supply Chain Climate Insurer
+tagline: >
+  An insurance company that protects businesses against climate disruption to their
+  supply chains—and invests premiums in fixing the underlying risks.
+category: New Financial Structure
+layer: Direct Solution
+image: supply-chain-climate-insurer.png
+topics:
+  - finance
+  - adaptation
+  - agriculture
+
+details:
+  - title: Underwriting
+    description: >
+      Prices and sells insurance against climate-related supply chain disruptions.
+      A chocolate company insures against cocoa drought. A fashion brand insures
+      against cotton water stress. A seafood company insures against fishery collapse.
+
+  - title: Risk-reduction investing
+    description: >
+      Instead of parking premiums in treasuries, invests directly in reducing the
+      risks being insured: agroforestry for cocoa, water efficiency for cotton,
+      sustainable fishery management for seafood.
+
+  - title: Virtuous cycle
+    description: >
+      As investments reduce risk, payouts decrease. Lower payouts mean higher profits.
+      Savings shared with policyholders as lower premiums—rewarding them for letting
+      the insurer fix the problem.
+
+  - title: Data advantage
+    description: >
+      Builds proprietary risk models from claims data + investment outcomes. Knows
+      more about supply chain climate risk than anyone. Sells data/advisory services
+      as additional revenue.

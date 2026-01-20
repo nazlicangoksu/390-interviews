@@ -1,0 +1,36 @@
+id: water-abundance-company
+name: The Water Abundance Company
+tagline: >
+  A company that sells long-term water security to cities, farms, and corporations—
+  and invests in everything that creates more water.
+category: New Business Model
+layer: Direct Solution
+image: water-abundance-company.png
+topics:
+  - water
+  - infrastructure
+  - agriculture
+
+details:
+  - title: Rights acquisition
+    description: >
+      Buys water rights in stressed basins from willing sellers—retiring farmers,
+      changing land uses, inefficient users.
+
+  - title: Supply investment
+    description: >
+      Instead of extracting maximum value, invests in expanding supply: aquifer
+      recharge projects, watershed restoration, water recycling infrastructure,
+      agricultural efficiency programs, atmospheric water generation.
+
+  - title: Security contracts
+    description: >
+      Sells "water security agreements" to customers: guaranteed access to X million
+      gallons per year for 20-50 years at predictable prices. Customers pay for
+      certainty, not just volume.
+
+  - title: Value capture
+    description: >
+      Makes money on the spread between low-cost supply expansion and high-value
+      security contracts. Asset value appreciates as water scarcity increases
+      everywhere else.
