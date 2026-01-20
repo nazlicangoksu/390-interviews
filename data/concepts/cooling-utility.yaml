@@ -35,3 +35,15 @@ details:
     description: >
       Aggregates cooling load to provide grid flexibility—shifting demand, storing
       thermal energy, reducing peak strain. Additional revenue from utilities.
+
+barrierSolutions:
+  - barrierId: complexity
+    explanation: >
+      "Pay for 72°F, we figure out how." Outcome-based contracts mean you evaluate
+      the company's ability to deliver, not the underlying technologies—simple
+      thesis, straightforward diligence.
+  - barrierId: risk-return
+    explanation: >
+      Utility-style recurring revenue with 40-60% efficiency gains over conventional
+      cooling. Predictable contracts, clear margins, bankable returns—infrastructure
+      investing you understand.

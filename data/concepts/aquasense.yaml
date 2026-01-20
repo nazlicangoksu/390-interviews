@@ -38,3 +38,14 @@ details:
       agricultural lenders. Farmers using the system have lower crop failure
       rates and better repayment. Lenders pay for risk scoring and early warning
       on portfolio stress.
+
+barrierSolutions:
+  - barrierId: impact-measurement
+    explanation: >
+      Real-time sensor data measures cubic meters saved—continuously, verifiably.
+      Impact isn't estimated or self-reported; it's hardware-measured in the field.
+  - barrierId: risk-return
+    explanation: >
+      Revenue comes from creditworthy payers—utilities, lenders, food companies—
+      not farmers. Multiple streams from institutional customers create predictable,
+      de-risked returns.

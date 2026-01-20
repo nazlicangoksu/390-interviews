@@ -34,3 +34,10 @@ details:
       Board structure designed for intergenerational continuity. Investor advisory
       councils. Scientific oversight. Constitutional commitments that can't be
       changed by majority vote.
+
+barrierSolutions:
+  - barrierId: liquidity
+    explanation: >
+      Your shares trade like any public security. Need liquidity? Sell to another
+      investor. The company never liquidates, but you can exit whenever you want—
+      just like selling Berkshire stock.

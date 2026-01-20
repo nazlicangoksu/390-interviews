@@ -35,3 +35,20 @@ details:
       Creates "climate risk scores" that become industry-standard inputs—like credit
       scores, but for climate exposure. Every financial product eventually needs
       this number.
+
+barrierSolutions:
+  - barrierId: complexity
+    explanation: >
+      One standardized score captures everything—like a credit score for climate risk.
+      Your team doesn't need to become climate scientists. The platform translates
+      complex data into decision-ready metrics.
+  - barrierId: impact-measurement
+    explanation: >
+      Every asset gets a quantified, comparable climate risk score. Insurers, banks,
+      and investors are already paying for this data—the market validates the
+      measurement methodology.
+  - barrierId: risk-return
+    explanation: >
+      Finally price climate risk accurately into your portfolio. The platform
+      reveals which assets are overexposed and which are undervalued—turning
+      climate uncertainty into quantified, investable insight.

@@ -38,3 +38,15 @@ details:
       Funds R&D, pilots, and early commercialization for solutions that don't have
       current market demand but would face capacity constraints if needed suddenly.
       Builds the infrastructure now, so it's ready to scale if scenarios worsen.
+
+barrierSolutions:
+  - barrierId: risk-return
+    explanation: >
+      Uses the same derivatives math that prices catastrophe bonds and weather
+      options. Expected value calculations justify the investment even at low
+      probability—Wall Street has been doing this for decades.
+  - barrierId: track-record
+    explanation: >
+      Trigger-linked returns remove manager risk entirely. You're not betting on
+      a team's ability to pick winners—you're buying exposure to climate scenarios
+      with contractually defined payouts.

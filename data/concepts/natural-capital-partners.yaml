@@ -33,3 +33,15 @@ details:
     description: >
       Pools corporate demand to fund larger projects. Ten food companies who all
       depend on the same watershed fund one big restoration project together.
+
+barrierSolutions:
+  - barrierId: complexity
+    explanation: >
+      Turnkey service handles everything—dependency mapping, investment design,
+      return structuring. You hire the expertise instead of building it. Simple
+      for you, comprehensive in execution.
+  - barrierId: impact-measurement
+    explanation: >
+      Clear metrics on supply chain risk reduction, avoided disruption costs, and
+      ecosystem health. Returns quantified in terms you already use: risk reduction,
+      cost avoidance, asset appreciation.

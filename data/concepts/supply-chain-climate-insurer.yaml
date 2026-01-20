@@ -35,3 +35,15 @@ details:
       Builds proprietary risk models from claims data + investment outcomes. Knows
       more about supply chain climate risk than anyone. Sells data/advisory services
       as additional revenue.
+
+barrierSolutions:
+  - barrierId: risk-return
+    explanation: >
+      Insurance is a proven model with well-understood economics. Premium income
+      plus investment returns minus payouts—you get returns from both underwriting
+      and active risk reduction.
+  - barrierId: impact-measurement
+    explanation: >
+      Claims data directly measures risk reduction. "Payouts decreased 30% in regions
+      where we invested"—clear impact tied to financial outcomes, not estimated
+      or self-reported.

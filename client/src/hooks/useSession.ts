@@ -104,8 +104,16 @@ export function useSession() {
     });
   }, []);
 
+  const setInvestmentStatus = useCallback((hasInvested: boolean) => {
+    updateSession({ hasInvestedInClimate: hasInvested });
+  }, [updateSession]);
+
   const setTopics = useCallback((topics: string[], customTopics: string[] = []) => {
     updateSession({ selectedTopics: topics, customTopics });
+  }, [updateSession]);
+
+  const setBarriers = useCallback((barriers: string[], customBarriers: string[] = []) => {
+    updateSession({ selectedBarriers: barriers, customBarriers });
   }, [updateSession]);
 
   const setConceptFeedback = useCallback((conceptId: string, feedback: ConceptFeedback) => {
@@ -168,7 +176,9 @@ export function useSession() {
     isSaving,
     createSession,
     updateSession,
+    setInvestmentStatus,
     setTopics,
+    setBarriers,
     setConceptFeedback,
     addIdea,
     endSession,

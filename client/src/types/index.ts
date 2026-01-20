@@ -5,6 +5,19 @@ export interface Topic {
   color: string;
 }
 
+export interface Barrier {
+  id: string;
+  name: string;
+  description: string;
+  shortDescription: string;
+  color: string;
+}
+
+export interface BarrierSolution {
+  barrierId: string;
+  explanation: string;
+}
+
 export interface ConceptDetail {
   title: string;
   description: string;
@@ -19,6 +32,7 @@ export interface Concept {
   image: string;
   topics: string[];
   details: ConceptDetail[];
+  barrierSolutions?: BarrierSolution[];
 }
 
 export interface ConceptFeedback {
@@ -46,8 +60,11 @@ export interface Session {
   consentGiven: boolean;
   startTime: string;
   endTime?: string;
+  hasInvestedInClimate?: boolean;
   selectedTopics: string[];
   customTopics: string[];
+  selectedBarriers?: string[];
+  customBarriers?: string[];
   conceptFeedback: Record<string, ConceptFeedback>;
   newIdeas: Idea[];
   notes: string;

@@ -34,3 +34,15 @@ details:
       Builds enforcement mechanisms—ecosystems can sue, block transactions, or
       trigger mandatory impact reviews. Fiduciary duty now includes duty to
       represented ecosystems.
+
+barrierSolutions:
+  - barrierId: greenwashing
+    explanation: >
+      Legal enforcement with teeth—ecosystems can sue and block transactions.
+      Companies can't claim commitments they won't keep when the Amazon watershed
+      has actual standing to hold them accountable.
+  - barrierId: impact-measurement
+    explanation: >
+      Governance triggers create hard metrics: "ecosystem consultation required
+      above $X." Impact isn't claimed in marketing—it's enforced through legal
+      mechanisms with defined thresholds.

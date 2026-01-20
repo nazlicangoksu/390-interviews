@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useConcepts, useTopics } from '../hooks/useData';
+import { useConcepts, useTopics, useBarriers } from '../hooks/useData';
 import type { Session } from '../types';
 
 export default function Summary() {
@@ -8,6 +8,7 @@ export default function Summary() {
   const navigate = useNavigate();
   const { concepts } = useConcepts();
   const { topics } = useTopics();
+  const { barriers } = useBarriers();
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -72,6 +73,10 @@ export default function Summary() {
     .map((tid) => topics.find((t) => t.id === tid)?.name || tid);
   const allTopicNames = [...selectedTopicNames, ...(session.customTopics || [])].join(', ');
 
+  const selectedBarrierNames = (session.selectedBarriers || [])
+    .map((bid) => barriers.find((b) => b.id === bid)?.name || bid);
+  const allBarrierNames = [...selectedBarrierNames, ...(session.customBarriers || [])].join(', ');
+
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleDateString('en-US', {
       month: 'long',
@@ -125,9 +130,27 @@ export default function Summary() {
             <span className="text-stone-800">{session.organizationType}</span>
           </div>
           <div>
-            <span className="text-stone-500">Topics:</span>{' '}
-            <span className="text-stone-800">{allTopicNames || 'None selected'}</span>
+            <span className="text-stone-500">Invested in Climate:</span>{' '}
+            <span className="text-stone-800">
+              {session.hasInvestedInClimate === undefined
+                ? 'Not specified'
+                : session.hasInvestedInClimate
+                ? 'Yes'
+                : 'No'}
+            </span>
           </div>
+          {session.hasInvestedInClimate === true && (
+            <div>
+              <span className="text-stone-500">Topics:</span>{' '}
+              <span className="text-stone-800">{allTopicNames || 'None selected'}</span>
+            </div>
+          )}
+          {session.hasInvestedInClimate === false && allBarrierNames && (
+            <div className="col-span-2">
+              <span className="text-stone-500">Investment Barriers:</span>{' '}
+              <span className="text-stone-800">{allBarrierNames}</span>
+            </div>
+          )}
           <div>
             <span className="text-stone-500">Status:</span>{' '}
             <span className={session.endTime ? 'text-green-600' : 'text-amber-600'}>
@@ -141,9 +164,13 @@ export default function Summary() {
       <div className="grid grid-cols-3 gap-4 mb-8">
         <div className="bg-white rounded-xl border border-stone-200 p-4 text-center">
           <div className="text-3xl font-light text-stone-800">
-            {session.selectedTopics.length + (session.customTopics?.length || 0)}
+            {session.hasInvestedInClimate === false
+              ? (session.selectedBarriers?.length || 0) + (session.customBarriers?.length || 0)
+              : session.selectedTopics.length + (session.customTopics?.length || 0)}
           </div>
-          <div className="text-sm text-stone-500">Topics Selected</div>
+          <div className="text-sm text-stone-500">
+            {session.hasInvestedInClimate === false ? 'Barriers Identified' : 'Topics Selected'}
+          </div>
         </div>
         <div className="bg-white rounded-xl border border-stone-200 p-4 text-center">
           <div className="text-3xl font-light text-stone-800">

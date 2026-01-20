@@ -33,3 +33,15 @@ details:
     description: >
       Investors own equity. Dividends paid from revenue streams. Share value tied
       to ecosystem health metrics—verified by satellite, eDNA, and ground monitoring.
+
+barrierSolutions:
+  - barrierId: impact-measurement
+    explanation: >
+      Share value is directly tied to verified ecosystem health—satellite imagery,
+      eDNA sampling, ground monitoring. Your impact isn't claimed, it's measured
+      and priced into the security you hold.
+  - barrierId: liquidity
+    explanation: >
+      Tradeable equity shares, not locked-up fund commitments. Buy and sell like
+      any other security—you maintain liquidity while the ecosystem gets the
+      long-term stewardship it needs.

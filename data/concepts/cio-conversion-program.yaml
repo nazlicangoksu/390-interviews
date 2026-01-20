@@ -32,3 +32,10 @@ details:
     description: >
       Alumni network. Ongoing deal flow. Direct line to climate investment experts.
       Reduces the "I don't know how to evaluate this" barrier.
+
+barrierSolutions:
+  - barrierId: complexity
+    explanation: >
+      Ready-to-use frameworks, risk models, and board presentation templates translate
+      climate investments into familiar language. Your team leaves with the actual
+      tools to evaluate opportunities confidently.

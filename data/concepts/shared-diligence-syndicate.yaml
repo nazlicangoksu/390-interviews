@@ -31,3 +31,20 @@ details:
     description: >
       The more DD in the system, the more valuable membership becomes. First mover
       advantage for early members who contribute most.
+
+barrierSolutions:
+  - barrierId: complexity
+    explanation: >
+      Read the DD memos from family offices that already did the work. Technical
+      assessments, site visit notes, risk analyses—all shared. You evaluate deals
+      using other sophisticated investors' homework.
+  - barrierId: deal-flow
+    explanation: >
+      Pre-vetted deals flow through the network. When the syndicate sees an opportunity,
+      it's already survived rigorous scrutiny from multiple sophisticated investors—
+      quality filtering built in.
+  - barrierId: peer-validation
+    explanation: >
+      You're co-investing alongside 15+ sophisticated family offices who've already
+      committed. Their DD, their capital, their conviction—visible proof that respected
+      peers are in this with you.

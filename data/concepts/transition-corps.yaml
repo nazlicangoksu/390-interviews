@@ -35,3 +35,10 @@ details:
       After 2 years, corps members have skills, network, and experience. Feeds
       talent into climate economy. Some start companies. Some join government.
       Some go to graduate school. All are climate-literate for life.
+
+barrierSolutions:
+  - barrierId: market-size
+    explanation: >
+      The climate workforce gap is the biggest bottleneck to scaling. By training
+      thousands annually, this unlocks billions in previously constrained project
+      capacity across the entire sector.

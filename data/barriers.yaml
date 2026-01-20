@@ -1,0 +1,60 @@
+barriers:
+  - id: risk-return
+    name: Risk/Return Profile Concerns
+    description: Climate investments don't offer competitive risk-adjusted returns compared to traditional assets
+    shortDescription: Returns don't justify the risk
+    color: red
+
+  - id: track-record
+    name: Lack of Track Record
+    description: There's not enough performance history to validate climate investment strategies
+    shortDescription: Limited performance history
+    color: orange
+
+  - id: complexity
+    name: Complexity & Understanding
+    description: Climate investing is too technical and difficult to evaluate without specialized expertise
+    shortDescription: Too complex to evaluate
+    color: purple
+
+  - id: liquidity
+    name: Liquidity Concerns
+    description: Climate investments lock up capital for too long without exit options
+    shortDescription: Capital locked too long
+    color: blue
+
+  - id: deal-flow
+    name: Deal Flow Quality
+    description: Hard to find high-quality climate investment opportunities at the right size
+    shortDescription: Hard to find quality deals
+    color: amber
+
+  - id: impact-measurement
+    name: Impact Measurement Difficulty
+    description: It's unclear how to measure and verify actual climate impact
+    shortDescription: Hard to measure impact
+    color: green
+
+  - id: greenwashing
+    name: Greenwashing Concerns
+    description: Worried about being misled by investments that claim climate benefits but don't deliver
+    shortDescription: Fear of false claims
+    color: yellow
+
+  - id: regulatory
+    name: Regulatory Uncertainty
+    description: Policy landscape is too uncertain and could change the economics of climate investments
+    shortDescription: Policy risks too high
+    color: stone
+
+  - id: market-size
+    name: Market Size/TAM Concerns
+    description: Climate markets are too small or niche to absorb meaningful capital deployment
+    shortDescription: Markets too small
+    color: teal
+
+  - id: peer-validation
+    name: Lack of Peer Validation
+    description: Not enough respected peers or co-investors are making similar commitments
+    shortDescription: Peers aren't investing
+    color: pink

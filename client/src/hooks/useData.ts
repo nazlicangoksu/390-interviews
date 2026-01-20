@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { Topic, Concept, Session } from '../types';
+import type { Topic, Concept, Session, Barrier } from '../types';
 
 export function useTopics() {
   const [topics, setTopics] = useState<Topic[]>([]);
@@ -20,6 +20,27 @@ export function useTopics() {
   }, []);
 
   return { topics, isLoading, error };
+}
+
+export function useBarriers() {
+  const [barriers, setBarriers] = useState<Barrier[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('/api/barriers')
+      .then((res) => res.json())
+      .then((data) => {
+        setBarriers(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setIsLoading(false);
+      });
+  }, []);
+
+  return { barriers, isLoading, error };
 }
 
 export function useConcepts() {

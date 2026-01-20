@@ -32,3 +32,15 @@ details:
     description: >
       As projects finish, workers rotate to the next project. The company manages
       the pipeline—workers never face unemployment between gigs.
+
+barrierSolutions:
+  - barrierId: regulatory
+    explanation: >
+      Workforce transition requirements are increasingly mandated for permits and
+      social license. This company makes that compliance a profit center—you're
+      investing in infrastructure that policy is pushing toward.
+  - barrierId: complexity
+    explanation: >
+      Simple investment thesis: staffing companies make money deploying workers.
+      The climate angle is embedded in the business model, not layered on top—
+      evaluate it like any staffing company.

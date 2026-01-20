@@ -33,7 +33,7 @@ export default function Welcome() {
         participantId: generateParticipantId(),
         consentGiven: true,
       });
-      navigate('/topics');
+      navigate('/investment-check');
     } catch (err) {
       console.error('Failed to create session:', err);
       alert('Failed to create session. Please try again.');

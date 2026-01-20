@@ -36,3 +36,15 @@ details:
       Consults with municipalities facing inevitable abandonment of certain
       areas. Helps design voluntary buyout programs, relocation incentives, and
       transition timelines that don't wait for disaster to force the issue.
+
+barrierSolutions:
+  - barrierId: impact-measurement
+    explanation: >
+      Hyperlocal livability forecasts with concrete metrics: "This neighborhood drops
+      from 72 to 41 by 2040." Quantifiable predictions you can track and verify—
+      not vague climate concern.
+  - barrierId: risk-return
+    explanation: >
+      Proper pricing of climate risk into real estate and infrastructure investments.
+      When you know which locations are viable in 2040, you can calibrate returns
+      accurately across your portfolio.

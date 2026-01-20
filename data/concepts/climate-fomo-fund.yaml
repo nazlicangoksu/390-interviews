@@ -30,3 +30,15 @@ details:
     description: >
       The fund might perform well, but that's not really the point. The point is
       membership in a group that signals values, sophistication, and access.
+
+barrierSolutions:
+  - barrierId: peer-validation
+    explanation: >
+      You're joining a community of sophisticated investors who've already made the leap.
+      Visible membership provides the social proof that respected peers are committed
+      to climate—you're not going it alone.
+  - barrierId: deal-flow
+    explanation: >
+      Members get early access to curated opportunities before the general market.
+      First allocation rights and co-investment privileges at institutional scale—
+      quality deals that match your check size, delivered to you.

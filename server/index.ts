@@ -49,6 +49,7 @@ const DATA_DIR = path.join(__dirname, '..', 'data');
 const CONCEPTS_DIR = path.join(DATA_DIR, 'concepts');
 const SESSIONS_DIR = path.join(DATA_DIR, 'sessions');
 const TOPICS_FILE = path.join(DATA_DIR, 'topics.yaml');
+const BARRIERS_FILE = path.join(DATA_DIR, 'barriers.yaml');
 
 // Ensure directories exist
 if (!fs.existsSync(SESSIONS_DIR)) {
@@ -58,6 +59,7 @@ if (!fs.existsSync(SESSIONS_DIR)) {
 // In-memory cache for concepts
 let conceptsCache: any[] = [];
 let topicsCache: any[] = [];
+let barriersCache: any[] = [];
 
 // Load all concepts from YAML files
 function loadConcepts() {
@@ -91,12 +93,26 @@ function loadTopics() {
   }
 }
 
+// Load barriers from YAML file
+function loadBarriers() {
+  try {
+    const content = fs.readFileSync(BARRIERS_FILE, 'utf-8');
+    const data = parse(content);
+    barriersCache = data.barriers || [];
+    console.log(`Loaded ${barriersCache.length} barriers`);
+  } catch (err) {
+    console.error('Error loading barriers:', err);
+    barriersCache = [];
+  }
+}
+
 // Initial load
 loadConcepts();
 loadTopics();
+loadBarriers();
 
 // Watch for file changes
-const watcher = chokidar.watch([CONCEPTS_DIR, TOPICS_FILE], {
+const watcher = chokidar.watch([CONCEPTS_DIR, TOPICS_FILE, BARRIERS_FILE], {
   ignoreInitial: true,
   awaitWriteFinish: { stabilityThreshold: 300 }
 });
@@ -107,6 +123,8 @@ watcher.on('all', (event, filePath) => {
     loadConcepts();
   } else if (filePath.includes('topics')) {
     loadTopics();
+  } else if (filePath.includes('barriers')) {
+    loadBarriers();
   }
 });
 
@@ -115,6 +133,11 @@ watcher.on('all', (event, filePath) => {
 // GET /api/topics - Get all topics
 app.get('/api/topics', (req, res) => {
   res.json(topicsCache);
+});
+
+// GET /api/barriers - Get all barriers
+app.get('/api/barriers', (req, res) => {
+  res.json(barriersCache);
 });
 
 // GET /api/concepts - Get all concepts
