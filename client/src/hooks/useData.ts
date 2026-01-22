@@ -136,7 +136,30 @@ export function useConcepts() {
     }
   };
 
-  return { concepts, isLoading, error, updateConceptTopics, updateConcept, uploadConceptImage, refetchConcepts };
+  const createConcept = async (conceptData: Omit<Concept, 'id' | 'image'> & { id?: string; image?: string }) => {
+    try {
+      // Generate ID from name if not provided
+      const id = conceptData.id || conceptData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      const newConcept = { ...conceptData, id, image: conceptData.image || '' };
+
+      const res = await fetch('/api/concepts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newConcept),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setConcepts((prev) => [...prev, data.concept]);
+        return data.concept;
+      }
+      return null;
+    } catch (err) {
+      console.error('Failed to create concept:', err);
+      return null;
+    }
+  };
+
+  return { concepts, isLoading, error, updateConceptTopics, updateConcept, uploadConceptImage, refetchConcepts, createConcept };
 }
 
 export function useSessions() {

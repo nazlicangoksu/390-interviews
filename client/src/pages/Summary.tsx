@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useConcepts, useTopics, useBarriers } from '../hooks/useData';
-import type { Session } from '../types';
+import type { Session, ConceptFeedback } from '../types';
 
 export default function Summary() {
   const { id } = useParams<{ id: string }>();
@@ -12,6 +12,11 @@ export default function Summary() {
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [editingConceptId, setEditingConceptId] = useState<string | null>(null);
+  const [editNotes, setEditNotes] = useState('');
+  const [editModifications, setEditModifications] = useState('');
+  const [editRating, setEditRating] = useState(0);
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     if (!id) {
@@ -44,6 +49,58 @@ export default function Summary() {
     link.download = `session-${session.participantId}.json`;
     link.click();
     URL.revokeObjectURL(url);
+  };
+
+  const startEditing = (conceptId: string, feedback?: ConceptFeedback) => {
+    setEditingConceptId(conceptId);
+    setEditNotes(feedback?.notes || '');
+    setEditModifications(feedback?.modifications || '');
+    setEditRating(feedback?.rating || 0);
+  };
+
+  const cancelEditing = () => {
+    setEditingConceptId(null);
+    setEditNotes('');
+    setEditModifications('');
+    setEditRating(0);
+  };
+
+  const saveEditing = async () => {
+    if (!session || !editingConceptId) return;
+
+    setIsSaving(true);
+    try {
+      const existingFeedback = session.conceptFeedback?.[editingConceptId];
+      const updatedFeedback = {
+        ...session.conceptFeedback,
+        [editingConceptId]: {
+          rating: editRating,
+          notes: editNotes,
+          modifications: editModifications,
+          timestamp: existingFeedback?.timestamp || new Date().toISOString(),
+        },
+      };
+
+      const updatedSession = {
+        ...session,
+        conceptFeedback: updatedFeedback,
+      };
+
+      const res = await fetch(`/api/sessions/${session.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedSession),
+      });
+
+      if (res.ok) {
+        setSession(updatedSession);
+        setEditingConceptId(null);
+      }
+    } catch (err) {
+      console.error('Failed to save feedback:', err);
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   if (isLoading) {
@@ -187,47 +244,129 @@ export default function Summary() {
       </div>
 
       {/* Concept Feedback */}
-      {reviewedConcepts.length > 0 && (
-        <section className="mb-8">
-          <h2 className="font-medium text-stone-800 mb-4">Concept Feedback</h2>
-          <div className="space-y-3">
-            {reviewedConcepts.map(([conceptId, feedback]) => {
-              const concept = concepts.find((c) => c.id === conceptId);
-              if (!concept) return null;
-              return (
-                <div
-                  key={conceptId}
-                  className="bg-white border border-stone-200 rounded-xl p-4"
-                >
-                  <div className="flex justify-between items-start mb-2">
-                    <p className="font-medium text-stone-800">{concept.name}</p>
-                    <div className="flex gap-0.5">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <span
-                          key={star}
-                          className={star <= feedback.rating ? 'text-amber-500' : 'text-stone-300'}
-                        >
-                          ★
-                        </span>
-                      ))}
+      <section className="mb-8">
+        <h2 className="font-medium text-stone-800 mb-4">Concept Feedback</h2>
+        <div className="space-y-3">
+          {concepts.map((concept) => {
+            const feedback = session.conceptFeedback?.[concept.id];
+            const isEditing = editingConceptId === concept.id;
+            const hasReview = !!feedback;
+
+            return (
+              <div
+                key={concept.id}
+                className={`bg-white border rounded-xl p-4 ${hasReview ? 'border-stone-200' : 'border-dashed border-stone-300'}`}
+              >
+                {isEditing ? (
+                  // Edit mode
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-start">
+                      <p className="font-medium text-stone-800">{concept.name}</p>
+                      <div className="flex gap-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <button
+                            key={star}
+                            onClick={() => setEditRating(star)}
+                            className={`text-xl ${star <= editRating ? 'text-amber-500' : 'text-stone-300'} hover:text-amber-400`}
+                          >
+                            ★
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-stone-600 mb-1">
+                        Reactions
+                      </label>
+                      <textarea
+                        value={editNotes}
+                        onChange={(e) => setEditNotes(e.target.value)}
+                        rows={2}
+                        className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                        placeholder="What were your initial reactions?"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-stone-600 mb-1">
+                        Modifications
+                      </label>
+                      <textarea
+                        value={editModifications}
+                        onChange={(e) => setEditModifications(e.target.value)}
+                        rows={2}
+                        className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                        placeholder="How would you modify this concept?"
+                      />
+                    </div>
+                    <div className="flex gap-2 justify-end">
+                      <button
+                        onClick={cancelEditing}
+                        disabled={isSaving}
+                        className="px-3 py-1 text-sm border border-stone-300 rounded-lg text-stone-600 hover:bg-stone-100"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={saveEditing}
+                        disabled={isSaving}
+                        className="px-3 py-1 text-sm bg-amber-500 hover:bg-amber-600 text-white rounded-lg"
+                      >
+                        {isSaving ? 'Saving...' : 'Save'}
+                      </button>
                     </div>
                   </div>
-                  {feedback.notes && (
-                    <p className="text-sm text-stone-600 mb-2">
-                      <span className="font-medium">Reactions:</span> {feedback.notes}
-                    </p>
-                  )}
-                  {feedback.modifications && (
-                    <p className="text-sm text-stone-600">
-                      <span className="font-medium">Modifications:</span> {feedback.modifications}
-                    </p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
+                ) : hasReview ? (
+                  // View mode - has review
+                  <>
+                    <div className="flex justify-between items-start mb-2">
+                      <p className="font-medium text-stone-800">{concept.name}</p>
+                      <div className="flex items-center gap-2">
+                        <div className="flex gap-0.5">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <span
+                              key={star}
+                              className={star <= feedback.rating ? 'text-amber-500' : 'text-stone-300'}
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
+                        <button
+                          onClick={() => startEditing(concept.id, feedback)}
+                          className="text-xs px-2 py-1 text-amber-600 hover:text-amber-700 hover:bg-amber-50 rounded"
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    </div>
+                    {feedback.notes && (
+                      <p className="text-sm text-stone-600 mb-2">
+                        <span className="font-medium">Reactions:</span> {feedback.notes}
+                      </p>
+                    )}
+                    {feedback.modifications && (
+                      <p className="text-sm text-stone-600">
+                        <span className="font-medium">Modifications:</span> {feedback.modifications}
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  // No review yet
+                  <div className="flex justify-between items-center">
+                    <p className="font-medium text-stone-500">{concept.name}</p>
+                    <button
+                      onClick={() => startEditing(concept.id)}
+                      className="text-xs px-3 py-1 bg-amber-100 text-amber-700 hover:bg-amber-200 rounded-full"
+                    >
+                      + Add Feedback
+                    </button>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Ideas */}
       {session.newIdeas && session.newIdeas.length > 0 && (

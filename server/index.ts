@@ -168,6 +168,29 @@ app.patch('/api/concepts/:id/topics', (req, res) => {
   }
 });
 
+// POST /api/concepts - Create new concept
+app.post('/api/concepts', (req, res) => {
+  const newConcept = req.body;
+
+  if (!newConcept.id || !newConcept.name) {
+    return res.status(400).json({ error: 'Concept id and name are required' });
+  }
+
+  const filePath = path.join(CONCEPTS_DIR, `${newConcept.id}.yaml`);
+
+  if (fs.existsSync(filePath)) {
+    return res.status(409).json({ error: 'Concept with this ID already exists' });
+  }
+
+  try {
+    fs.writeFileSync(filePath, stringify(newConcept), 'utf-8');
+    res.status(201).json({ success: true, concept: newConcept });
+  } catch (err) {
+    console.error('Error creating concept:', err);
+    res.status(500).json({ error: 'Failed to create concept' });
+  }
+});
+
 // PUT /api/concepts/:id - Update entire concept
 app.put('/api/concepts/:id', (req, res) => {
   const { id } = req.params;

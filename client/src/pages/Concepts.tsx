@@ -5,6 +5,7 @@ import { useSession } from '../hooks/useSession';
 import ConceptCard from '../components/ConceptCard';
 import ConceptModal from '../components/ConceptModal';
 import ConceptEditModal from '../components/ConceptEditModal';
+import ConceptCreateModal from '../components/ConceptCreateModal';
 import type { Concept, ConceptFeedback } from '../types';
 
 function ConfirmEndModal({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () => void }) {
@@ -49,11 +50,12 @@ const topicColors: Record<string, string> = {
 
 export default function Concepts() {
   const navigate = useNavigate();
-  const { concepts, updateConceptTopics, updateConcept, uploadConceptImage, refetchConcepts } = useConcepts();
+  const { concepts, updateConceptTopics, updateConcept, uploadConceptImage, refetchConcepts, createConcept } = useConcepts();
   const { topics } = useTopics();
   const { session, setConceptFeedback, endSession, isSaving } = useSession();
   const [selectedConcept, setSelectedConcept] = useState<Concept | null>(null);
   const [editingConcept, setEditingConcept] = useState<Concept | null>(null);
+  const [showCreateModal, setShowCreateModal] = useState(false);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'reviewed' | 'not-reviewed'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopicFilters, setSelectedTopicFilters] = useState<string[]>([]);
@@ -232,9 +234,17 @@ export default function Concepts() {
         </div>
       </div>
 
-      {/* Results count */}
-      <div className="text-sm text-stone-500 mb-4">
-        Showing {totalCount} of {concepts.length} concepts
+      {/* Results count and Add button */}
+      <div className="flex justify-between items-center mb-4">
+        <div className="text-sm text-stone-500">
+          Showing {totalCount} of {concepts.length} concepts
+        </div>
+        <button
+          onClick={() => setShowCreateModal(true)}
+          className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-sm font-medium transition-colors"
+        >
+          + Add New Concept
+        </button>
       </div>
 
       {/* Concept Grid */}
@@ -311,6 +321,21 @@ export default function Concepts() {
         <ConfirmEndModal
           onConfirm={handleEndSession}
           onCancel={() => setShowEndConfirm(false)}
+        />
+      )}
+
+      {/* Create Concept Modal */}
+      {showCreateModal && (
+        <ConceptCreateModal
+          topics={topics}
+          onSave={async (conceptData) => {
+            const result = await createConcept(conceptData);
+            if (result) {
+              await refetchConcepts();
+            }
+            return result;
+          }}
+          onClose={() => setShowCreateModal(false)}
         />
       )}
     </div>

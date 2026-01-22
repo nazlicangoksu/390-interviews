@@ -1,0 +1,52 @@
+id: climate-catalyst-fund
+name: Climate Catalyst Fund
+tagline: >
+  A first-loss capital structure that de-risks private investment in Series B/C
+  climate companies—the underfunded "messy middle" between seed-stage VCs and
+  infrastructure-scale project finance.
+category: New Financial Structure
+layer: Enabler
+image: climate-catalyst-fund.png
+topics:
+  - finance
+
+details:
+  - title: Catalytic capital absorbs first losses
+    description: >
+      A foundation, DFI, or philanthropic family office commits 20% of the fund
+      as first-loss capital at near-zero return. If the fund underperforms, they
+      absorb losses first. Your capital is protected until their cushion is exhausted.
+
+  - title: Your capital gets de-risked exposure
+    description: >
+      You commit 80% at market-rate return targets. The first-loss layer means
+      you can tolerate the longer timelines and lumpier exits typical of climate
+      growth companies—without sacrificing your return threshold.
+
+  - title: Upside recycles the catalytic layer
+    description: >
+      If the fund exceeds a 6% hurdle, catalytic capital recycles out and your
+      share of upside increases. The philanthropic dollar gets redeployed; you
+      capture more of the win.
+
+  - title: Portfolio targets the funding gap
+    description: >
+      8-12 companies at $20-50M checks. Climate risk analytics, water security,
+      grid resilience, resilient food systems—companies with real revenue but
+      stuck between seed-stage VCs and infrastructure-scale project finance.
+
+barrierSolutions:
+  - barrierId: risk-return
+    explanation: >
+      First-loss capital absorbs 20% of downside before you lose a dollar. Your
+      capital targets market-rate returns with a built-in cushion—de-risked
+      exposure to climate growth companies.
+  - barrierId: deal-flow
+    explanation: >
+      Direct access to the "messy middle"—Series B/C companies with real revenue
+      that most funds can't reach. 8-12 companies per fund, each at $20-50M checks.
+  - barrierId: track-record
+    explanation: >
+      Blended capital structures have proven track records in development finance.
+      The first-loss layer is designed for this—philanthropic capital that exists
+      specifically to unlock private investment.
