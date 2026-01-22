@@ -114,7 +114,7 @@ export default function Dashboard() {
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-stone-500 mr-4">
                     {Object.keys(session.conceptFeedback || {}).length} concepts •{' '}
-                    {session.newIdeas?.length || 0} ideas
+                    {session.sessionConcepts?.length || 0} session concepts
                   </span>
                   <button
                     onClick={() => navigate(`/summary/${session.id}`)}

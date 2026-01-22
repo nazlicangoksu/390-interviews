@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useConcepts, useTopics, useBarriers } from '../hooks/useData';
-import type { Session, ConceptFeedback } from '../types';
+import ConceptCreateModal from '../components/ConceptCreateModal';
+import type { Session, ConceptFeedback, SessionConcept } from '../types';
 
 export default function Summary() {
   const { id } = useParams<{ id: string }>();
@@ -17,6 +18,7 @@ export default function Summary() {
   const [editModifications, setEditModifications] = useState('');
   const [editRating, setEditRating] = useState(0);
   const [isSaving, setIsSaving] = useState(false);
+  const [showCreateModal, setShowCreateModal] = useState(false);
 
   useEffect(() => {
     if (!id) {
@@ -217,6 +219,14 @@ export default function Summary() {
         </div>
       </section>
 
+      {/* Running Notes */}
+      {session.notes && (
+        <section className="bg-white border border-stone-200 rounded-xl p-6 mb-8">
+          <h2 className="font-medium text-stone-800 mb-3">Interview Notes</h2>
+          <p className="text-sm text-stone-600 whitespace-pre-wrap">{session.notes}</p>
+        </section>
+      )}
+
       {/* Quick Stats */}
       <div className="grid grid-cols-3 gap-4 mb-8">
         <div className="bg-white rounded-xl border border-stone-200 p-4 text-center">
@@ -237,15 +247,17 @@ export default function Summary() {
         </div>
         <div className="bg-white rounded-xl border border-stone-200 p-4 text-center">
           <div className="text-3xl font-light text-stone-800">
-            {session.newIdeas?.length || 0}
+            {session.sessionConcepts?.length || 0}
           </div>
-          <div className="text-sm text-stone-500">Ideas Captured</div>
+          <div className="text-sm text-stone-500">Session Concepts</div>
         </div>
       </div>
 
       {/* Concept Feedback */}
       <section className="mb-8">
-        <h2 className="font-medium text-stone-800 mb-4">Concept Feedback</h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="font-medium text-stone-800">Concept Feedback</h2>
+        </div>
         <div className="space-y-3">
           {concepts.map((concept) => {
             const feedback = session.conceptFeedback?.[concept.id];
@@ -368,6 +380,160 @@ export default function Summary() {
         </div>
       </section>
 
+      {/* Session-Specific Concepts */}
+      <section className="mb-8">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="font-medium text-stone-800">Session Concepts</h2>
+          <button
+            onClick={() => setShowCreateModal(true)}
+            className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-sm font-medium transition-colors"
+          >
+            + Add New Concept
+          </button>
+        </div>
+        {session.sessionConcepts && session.sessionConcepts.length > 0 ? (
+          <div className="space-y-3">
+            {session.sessionConcepts.map((concept) => {
+              const feedback = session.conceptFeedback?.[concept.id];
+              const isEditing = editingConceptId === concept.id;
+              const hasReview = !!feedback;
+
+              return (
+                <div
+                  key={concept.id}
+                  className={`bg-amber-50 border rounded-xl p-4 ${hasReview ? 'border-amber-200' : 'border-dashed border-amber-300'}`}
+                >
+                  {isEditing ? (
+                    // Edit mode
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="font-medium text-stone-800">{concept.name}</p>
+                          <p className="text-xs text-amber-600">Session concept</p>
+                        </div>
+                        <div className="flex gap-1">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <button
+                              key={star}
+                              onClick={() => setEditRating(star)}
+                              className={`text-xl ${star <= editRating ? 'text-amber-500' : 'text-stone-300'} hover:text-amber-400`}
+                            >
+                              ★
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-stone-600 mb-1">
+                          Reactions
+                        </label>
+                        <textarea
+                          value={editNotes}
+                          onChange={(e) => setEditNotes(e.target.value)}
+                          rows={2}
+                          className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                          placeholder="What were your initial reactions?"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-stone-600 mb-1">
+                          Modifications
+                        </label>
+                        <textarea
+                          value={editModifications}
+                          onChange={(e) => setEditModifications(e.target.value)}
+                          rows={2}
+                          className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                          placeholder="How would you modify this concept?"
+                        />
+                      </div>
+                      <div className="flex gap-2 justify-end">
+                        <button
+                          onClick={cancelEditing}
+                          disabled={isSaving}
+                          className="px-3 py-1 text-sm border border-stone-300 rounded-lg text-stone-600 hover:bg-stone-100"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          onClick={saveEditing}
+                          disabled={isSaving}
+                          className="px-3 py-1 text-sm bg-amber-500 hover:bg-amber-600 text-white rounded-lg"
+                        >
+                          {isSaving ? 'Saving...' : 'Save'}
+                        </button>
+                      </div>
+                    </div>
+                  ) : hasReview ? (
+                    // View mode - has review
+                    <>
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <p className="font-medium text-stone-800">{concept.name}</p>
+                          <p className="text-xs text-amber-600">Session concept</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="flex gap-0.5">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                              <span
+                                key={star}
+                                className={star <= feedback.rating ? 'text-amber-500' : 'text-stone-300'}
+                              >
+                                ★
+                              </span>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => startEditing(concept.id, feedback)}
+                            className="text-xs px-2 py-1 text-amber-600 hover:text-amber-700 hover:bg-amber-50 rounded"
+                          >
+                            Edit
+                          </button>
+                        </div>
+                      </div>
+                      {concept.tagline && (
+                        <p className="text-sm text-stone-600 mb-2">{concept.tagline}</p>
+                      )}
+                      {feedback.notes && (
+                        <p className="text-sm text-stone-600 mb-2">
+                          <span className="font-medium">Reactions:</span> {feedback.notes}
+                        </p>
+                      )}
+                      {feedback.modifications && (
+                        <p className="text-sm text-stone-600">
+                          <span className="font-medium">Modifications:</span> {feedback.modifications}
+                        </p>
+                      )}
+                    </>
+                  ) : (
+                    // No review yet
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <p className="font-medium text-stone-800">{concept.name}</p>
+                        <p className="text-xs text-amber-600">Session concept</p>
+                        {concept.tagline && (
+                          <p className="text-sm text-stone-500 mt-1">{concept.tagline}</p>
+                        )}
+                      </div>
+                      <button
+                        onClick={() => startEditing(concept.id)}
+                        className="text-xs px-3 py-1 bg-amber-100 text-amber-700 hover:bg-amber-200 rounded-full"
+                      >
+                        + Add Feedback
+                      </button>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="text-sm text-stone-500 italic">
+            No session-specific concepts added yet. Click "+ Add New Concept" to add concepts that will only appear in this session.
+          </p>
+        )}
+      </section>
+
       {/* Ideas */}
       {session.newIdeas && session.newIdeas.length > 0 && (
         <section className="mb-8">
@@ -403,6 +569,47 @@ export default function Summary() {
           Export JSON
         </button>
       </div>
+
+      {/* Create Concept Modal */}
+      {showCreateModal && (
+        <ConceptCreateModal
+          topics={topics}
+          onSave={async (conceptData) => {
+            // Create session-specific concept
+            const newSessionConcept: SessionConcept = {
+              id: `session-${Date.now()}`,
+              name: conceptData.name,
+              tagline: conceptData.tagline,
+              category: conceptData.category,
+              layer: conceptData.layer,
+              topics: conceptData.topics,
+              details: conceptData.details,
+            };
+
+            const updatedSession = {
+              ...session,
+              sessionConcepts: [...(session.sessionConcepts || []), newSessionConcept],
+            };
+
+            try {
+              const res = await fetch(`/api/sessions/${session.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedSession),
+              });
+
+              if (res.ok) {
+                setSession(updatedSession);
+                return newSessionConcept;
+              }
+            } catch (err) {
+              console.error('Failed to save session concept:', err);
+            }
+            return null;
+          }}
+          onClose={() => setShowCreateModal(false)}
+        />
+      )}
     </div>
   );
 }

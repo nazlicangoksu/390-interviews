@@ -6,7 +6,7 @@ import ConceptCard from '../components/ConceptCard';
 import ConceptModal from '../components/ConceptModal';
 import ConceptEditModal from '../components/ConceptEditModal';
 import ConceptCreateModal from '../components/ConceptCreateModal';
-import type { Concept, ConceptFeedback } from '../types';
+import type { Concept, ConceptFeedback, SessionConcept } from '../types';
 
 function ConfirmEndModal({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () => void }) {
   return (
@@ -50,9 +50,9 @@ const topicColors: Record<string, string> = {
 
 export default function Concepts() {
   const navigate = useNavigate();
-  const { concepts, updateConceptTopics, updateConcept, uploadConceptImage, refetchConcepts, createConcept } = useConcepts();
+  const { concepts, updateConceptTopics, updateConcept, uploadConceptImage, refetchConcepts } = useConcepts();
   const { topics } = useTopics();
-  const { session, setConceptFeedback, endSession, isSaving } = useSession();
+  const { session, setConceptFeedback, endSession, isSaving, updateSession } = useSession();
   const [selectedConcept, setSelectedConcept] = useState<Concept | null>(null);
   const [editingConcept, setEditingConcept] = useState<Concept | null>(null);
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -329,11 +329,22 @@ export default function Concepts() {
         <ConceptCreateModal
           topics={topics}
           onSave={async (conceptData) => {
-            const result = await createConcept(conceptData);
-            if (result) {
-              await refetchConcepts();
-            }
-            return result;
+            // Create session-specific concept (same as Summary page)
+            const newSessionConcept: SessionConcept = {
+              id: `session-${Date.now()}`,
+              name: conceptData.name,
+              tagline: conceptData.tagline,
+              category: conceptData.category,
+              layer: conceptData.layer,
+              topics: conceptData.topics,
+              details: conceptData.details,
+            };
+
+            updateSession({
+              sessionConcepts: [...(session?.sessionConcepts || []), newSessionConcept],
+            });
+
+            return newSessionConcept;
           }}
           onClose={() => setShowCreateModal(false)}
         />

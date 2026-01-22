@@ -1,8 +1,9 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useConcepts, useBarriers } from '../hooks/useData';
+import { useConcepts, useBarriers, useTopics } from '../hooks/useData';
 import { useSession } from '../hooks/useSession';
-import type { Concept, ConceptFeedback, Barrier } from '../types';
+import ConceptCreateModal from '../components/ConceptCreateModal';
+import type { Concept, ConceptFeedback, Barrier, SessionConcept } from '../types';
 
 const barrierColors: Record<string, string> = {
   red: 'bg-red-100 text-red-700 border-red-300',
@@ -308,11 +309,13 @@ export default function BarrierConcepts() {
   const navigate = useNavigate();
   const { concepts } = useConcepts();
   const { barriers } = useBarriers();
-  const { session, setConceptFeedback, endSession, isSaving } = useSession();
+  const { topics } = useTopics();
+  const { session, setConceptFeedback, endSession, isSaving, updateSession } = useSession();
   const [selectedConcept, setSelectedConcept] = useState<Concept | null>(null);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'reviewed' | 'not-reviewed'>('all');
   const [selectedBarrierFilters, setSelectedBarrierFilters] = useState<string[]>([]);
   const [showEndConfirm, setShowEndConfirm] = useState(false);
+  const [showCreateModal, setShowCreateModal] = useState(false);
 
   const selectedBarrierIds = session?.selectedBarriers || [];
 
@@ -401,6 +404,12 @@ export default function BarrierConcepts() {
           </div>
           <div className="text-sm text-stone-500">concepts reviewed</div>
           {isSaving && <div className="text-xs text-amber-600 mt-1">Saving...</div>}
+          <button
+            onClick={() => setShowCreateModal(true)}
+            className="mt-3 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-sm font-medium transition-colors"
+          >
+            + Add New Concept
+          </button>
         </div>
       </header>
 
@@ -537,6 +546,29 @@ export default function BarrierConcepts() {
         <ConfirmEndModal
           onConfirm={handleEndSession}
           onCancel={() => setShowEndConfirm(false)}
+        />
+      )}
+
+      {/* Create Concept Modal */}
+      {showCreateModal && (
+        <ConceptCreateModal
+          topics={topics}
+          onSave={async (conceptData) => {
+            const newSessionConcept: SessionConcept = {
+              id: `session-${Date.now()}`,
+              name: conceptData.name,
+              tagline: conceptData.tagline,
+              category: conceptData.category,
+              layer: conceptData.layer,
+              topics: conceptData.topics,
+              details: conceptData.details,
+            };
+            updateSession({
+              sessionConcepts: [...(session?.sessionConcepts || []), newSessionConcept],
+            });
+            return newSessionConcept;
+          }}
+          onClose={() => setShowCreateModal(false)}
         />
       )}
     </div>

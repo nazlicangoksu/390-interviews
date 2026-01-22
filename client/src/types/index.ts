@@ -50,6 +50,16 @@ export interface Idea {
   timestamp: string;
 }
 
+export interface SessionConcept {
+  id: string;
+  name: string;
+  tagline: string;
+  category: string;
+  layer: string;
+  topics: string[];
+  details: ConceptDetail[];
+}
+
 export interface Session {
   id: string;
   participantId: string;
@@ -68,4 +78,5 @@ export interface Session {
   conceptFeedback: Record<string, ConceptFeedback>;
   newIdeas: Idea[];
   notes: string;
+  sessionConcepts?: SessionConcept[];
 }

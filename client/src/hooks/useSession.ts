@@ -6,7 +6,7 @@ const AUTO_SAVE_INTERVAL = 30000; // 30 seconds
 
 export function useSession() {
   const [session, setSession] = useState<Session | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const lastSavedRef = useRef<string>('');
 
@@ -21,6 +21,7 @@ export function useSession() {
         console.error('Failed to parse saved session:', e);
       }
     }
+    setIsLoading(false);
   }, []);
 
   // Auto-save to localStorage whenever session changes
