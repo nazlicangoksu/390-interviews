@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import ConfirmDeleteModal from './ConfirmDeleteModal';
 import type { Concept, ConceptDetail, Topic } from '../types';
 
 interface ConceptEditModalProps {
@@ -39,6 +40,7 @@ export default function ConceptEditModal({
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [deleteDetailConfirm, setDeleteDetailConfirm] = useState<number | null>(null);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -260,7 +262,7 @@ export default function ConceptEditModal({
                   {details.map((detail, idx) => (
                     <div key={idx} className="bg-stone-50 rounded-lg p-3 relative">
                       <button
-                        onClick={() => removeDetail(idx)}
+                        onClick={() => setDeleteDetailConfirm(idx)}
                         className="absolute top-2 right-2 text-stone-400 hover:text-red-500 text-sm"
                       >
                         ×
@@ -304,6 +306,18 @@ export default function ConceptEditModal({
             {isSaving ? 'Saving...' : 'Save Changes'}
           </button>
         </div>
+
+        {deleteDetailConfirm !== null && (
+          <ConfirmDeleteModal
+            title="Remove Detail"
+            message="Are you sure you want to remove this detail?"
+            onConfirm={() => {
+              removeDetail(deleteDetailConfirm);
+              setDeleteDetailConfirm(null);
+            }}
+            onCancel={() => setDeleteDetailConfirm(null)}
+          />
+        )}
       </div>
     </div>
   );

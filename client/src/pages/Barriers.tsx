@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useBarriers } from '../hooks/useData';
 import { useSession } from '../hooks/useSession';
+import ConfirmDeleteModal from '../components/ConfirmDeleteModal';
 
 const barrierColors: Record<string, string> = {
   red: 'bg-red-100 text-red-700 border-red-300',
@@ -29,6 +30,7 @@ export default function Barriers() {
   const [customBarriers, setCustomBarriers] = useState<string[]>(
     session?.customBarriers || []
   );
+  const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
 
   const toggleBarrier = (barrierId: string) => {
     setSelectedBarriers((prev) =>
@@ -121,7 +123,7 @@ export default function Barriers() {
               >
                 {barrier}
                 <button
-                  onClick={() => removeCustomBarrier(barrier)}
+                  onClick={() => setDeleteConfirm(barrier)}
                   className="hover:text-amber-900"
                 >
                   ×
@@ -147,6 +149,17 @@ export default function Barriers() {
           See Concepts That Address These Barriers
         </button>
       </div>
+      {deleteConfirm && (
+        <ConfirmDeleteModal
+          title="Remove Custom Barrier"
+          message={`Are you sure you want to remove "${deleteConfirm}"?`}
+          onConfirm={() => {
+            removeCustomBarrier(deleteConfirm);
+            setDeleteConfirm(null);
+          }}
+          onCancel={() => setDeleteConfirm(null)}
+        />
+      )}
     </div>
   );
 }

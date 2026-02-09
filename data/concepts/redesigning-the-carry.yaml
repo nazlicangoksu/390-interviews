@@ -1,0 +1,65 @@
+id: redesigning-the-carry
+name: Redesigning the Carry
+tagline: >
+  A new incentive architecture around climate allocation so that the people
+  making the actual investment decisions are rewarded for patience rather
+  than punished for it.
+category: New Financial Structure
+layer: Enabler
+image: redesigning-the-carry.png
+topics:
+  - finance
+
+details:
+  - title: The structural mismatch
+    description: >
+      CIOs and investment advisors often see the climate opportunity. The challenge is not conviction. It is that the evaluation
+      structures around them were designed for a different kind of asset.
+      Three-year performance windows, near-term compensation cycles, and
+      reputational incentives that reward consensus. Climate, with its
+      decade-long timelines, needs a different frame.
+
+  - title: Vintage-weighted performance
+    description: >
+      Climate investments evaluated on seven to ten year cycles rather than
+      three. Endowments already do this for infrastructure and real estate.
+      Nobody has applied it systematically to climate.
+
+  - title: Governance bridge
+    description: >
+      For families where the next generation has conviction but the CIO answers
+      to the first generation. Give the younger family members a defined
+      allocation and real authority over it. The CIO advises. The next gen
+      decides. The allocation grows as track record builds.
+
+  - title: Reputation shield
+    description: >
+      Built into a due diligence commons: when a CIO can show that five
+      credible peers underwrote the same investment, the career risk of
+      any individual bet drops to nearly zero. Collective conviction as
+      professional cover.
+
+  - title: Inspired by
+    description: >
+      How venture studios separate innovation metrics from core business
+      P&L, so people running experiments are never evaluated on the same
+      scorecard as people running operations.
+
+barrierSolutions:
+  - barrierId: risk-return
+    explanation: >
+      The problem is not that climate returns are bad. The problem is that
+      they are measured on the wrong clock. Vintage-weighted performance
+      evaluation lets climate investments mature before judgment, the same
+      way endowments evaluate infrastructure.
+  - barrierId: peer-validation
+    explanation: >
+      The reputation shield turns peer validation into professional
+      insurance. When five credible CIOs have underwritten the same thesis,
+      no single person carries the career risk. Conviction becomes collective.
+  - barrierId: track-record
+    explanation: >
+      The governance bridge creates track record by giving the next
+      generation a real allocation with real authority. Small at first,
+      growing as results compound. The track record builds inside the
+      family, not outside it.

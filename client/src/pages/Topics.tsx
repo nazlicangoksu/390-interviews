@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTopics } from '../hooks/useData';
 import { useSession } from '../hooks/useSession';
+import ConfirmDeleteModal from '../components/ConfirmDeleteModal';
 
 const topicColors: Record<string, string> = {
   green: 'bg-green-100 text-green-700 border-green-300',
@@ -27,6 +28,7 @@ export default function Topics() {
   const [customTopics, setCustomTopics] = useState<string[]>(
     session?.customTopics || []
   );
+  const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
 
   const toggleTopic = (topicId: string) => {
     setSelectedTopics((prev) =>
@@ -120,7 +122,7 @@ export default function Topics() {
               >
                 {topic}
                 <button
-                  onClick={() => removeCustomTopic(topic)}
+                  onClick={() => setDeleteConfirm(topic)}
                   className="hover:text-amber-900"
                 >
                   ×
@@ -145,6 +147,17 @@ export default function Topics() {
           Continue to Concepts
         </button>
       </div>
+      {deleteConfirm && (
+        <ConfirmDeleteModal
+          title="Remove Custom Topic"
+          message={`Are you sure you want to remove "${deleteConfirm}"?`}
+          onConfirm={() => {
+            removeCustomTopic(deleteConfirm);
+            setDeleteConfirm(null);
+          }}
+          onCancel={() => setDeleteConfirm(null)}
+        />
+      )}
     </div>
   );
 }

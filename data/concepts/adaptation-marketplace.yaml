@@ -1,0 +1,79 @@
+id: adaptation-marketplace
+name: The Adaptation Marketplace
+tagline: >
+  A platform that convenes adaptation solutions around specific climate perils,
+  bundles them into packages that make regions insurable again, and creates
+  investment opportunities for the family offices whose own assets depend on it.
+category: New Business Model
+layer: Platform
+image: adaptation-marketplace.png
+topics:
+  - adaptation
+  - infrastructure
+  - finance
+
+details:
+  - title: The gap
+    description: >
+      Insurance companies are leaving California, Florida, and coastal Southeast
+      Asia. The startups solving wildfire do not talk to the family offices losing
+      property value do not talk to the insurers who left. Each sits in their own
+      world while the actual problem, making a region insurable again, requires
+      all three at the same table.
+
+  - title: How it works
+    description: >
+      Define a climate peril. Search across the startup landscape for every
+      component of the solution: detection, prevention, response, monitoring.
+      Assemble them into an integrated package. Bring the package to insurers
+      with the capital attached from family offices whose own assets are at stake.
+
+  - title: Wildfire edition
+    description: >
+      Family offices with California real estate exposure fund a curated search
+      across wildfire solution startups: early detection, defensible space
+      technology, building materials, smoke and ember monitoring, vegetation
+      management. Bundle into a package and bring to insurers. The pitch: we
+      have de-risked this geography.
+
+  - title: Flood edition
+    description: >
+      Same structure for coastal markets. Family offices with Southeast Asian
+      or Florida coastal exposure fund a search across flood mitigation, mangrove
+      restoration, storm surge modeling, parametric insurance, and water sensor
+      technologies. Bundle into a regional resilience package for reinsurers.
+
+  - title: The platform as infrastructure
+    description: >
+      Wildfire this year. Flood next year. Heat the year after. Each edition
+      produces a portfolio of investments, a set of insurer relationships, and
+      a proof point that adaptation solutions can restore insurability. Over time
+      it becomes where insurers go to find bundled solutions and family offices
+      go to find investments that protect their own holdings.
+
+  - title: Inspired by
+    description: >
+      Defense procurement. The DoD does not go startup by startup looking for
+      components. It issues challenges around specific capability gaps and
+      assembles solutions into integrated systems. The adaptation marketplace
+      does the same for climate perils.
+
+barrierSolutions:
+  - barrierId: complexity
+    explanation: >
+      The platform does the assembly work. Instead of evaluating dozens of
+      individual climate startups, you invest in a curated, bundled solution
+      designed around a specific peril you already understand because it
+      threatens your own assets.
+  - barrierId: deal-flow
+    explanation: >
+      Each edition produces a pre-assembled portfolio of startups vetted against
+      a real problem. The deal flow is structured around specific perils, not
+      random climate startups. Quality comes from the bundling logic, not
+      just screening.
+  - barrierId: risk-return
+    explanation: >
+      The return is partially self-hedging. You are investing in solutions
+      that protect the value of assets you already own. The downside of not
+      investing is measurable: continued property value erosion and rising
+      insurance costs on your own holdings.

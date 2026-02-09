@@ -8,6 +8,7 @@ import Barriers from './pages/Barriers';
 import Concepts from './pages/Concepts';
 import BarrierConcepts from './pages/BarrierConcepts';
 import Summary from './pages/Summary';
+import Synthesis from './pages/Synthesis';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/concepts" element={<Concepts />} />
           <Route path="/barrier-concepts" element={<BarrierConcepts />} />
           <Route path="/summary/:id" element={<Summary />} />
+          <Route path="/synthesis" element={<Synthesis />} />
         </Routes>
       </div>
     </BrowserRouter>

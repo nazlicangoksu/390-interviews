@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ConfirmDeleteModal from './ConfirmDeleteModal';
 import type { ConceptDetail, Topic } from '../types';
 
 interface ConceptCreateModalProps {
@@ -39,6 +40,7 @@ export default function ConceptCreateModal({
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [details, setDetails] = useState<ConceptDetail[]>([{ title: '', description: '' }]);
   const [isSaving, setIsSaving] = useState(false);
+  const [deleteDetailConfirm, setDeleteDetailConfirm] = useState<number | null>(null);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -212,7 +214,7 @@ export default function ConceptCreateModal({
                     <div key={idx} className="bg-stone-50 rounded-lg p-3 relative">
                       {details.length > 1 && (
                         <button
-                          onClick={() => removeDetail(idx)}
+                          onClick={() => setDeleteDetailConfirm(idx)}
                           className="absolute top-2 right-2 text-stone-400 hover:text-red-500 text-sm"
                         >
                           ×
@@ -257,6 +259,18 @@ export default function ConceptCreateModal({
             {isSaving ? 'Creating...' : 'Create Concept'}
           </button>
         </div>
+
+        {deleteDetailConfirm !== null && (
+          <ConfirmDeleteModal
+            title="Remove Detail"
+            message="Are you sure you want to remove this detail?"
+            onConfirm={() => {
+              removeDetail(deleteDetailConfirm);
+              setDeleteDetailConfirm(null);
+            }}
+            onCancel={() => setDeleteDetailConfirm(null)}
+          />
+        )}
       </div>
     </div>
   );

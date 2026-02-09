@@ -93,6 +93,10 @@ export default function Welcome() {
             <option value="HNWI Investor">HNWI Investor</option>
             <option value="Wealth Advisor">Wealth Advisor</option>
             <option value="Investment Manager">Investment Manager</option>
+            <option value="Climate Scientist">Climate Scientist</option>
+            <option value="Environmental Researcher">Environmental Researcher</option>
+            <option value="Policy Analyst">Policy Analyst</option>
+            <option value="Government Official">Government Official</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -113,6 +117,9 @@ export default function Welcome() {
             <option value="Private Foundation">Private Foundation</option>
             <option value="Wealth Management Firm">Wealth Management Firm</option>
             <option value="Individual Investor">Individual Investor</option>
+            <option value="University / Research Institution">University / Research Institution</option>
+            <option value="Government Agency">Government Agency</option>
+            <option value="NGO / Think Tank">NGO / Think Tank</option>
             <option value="Other">Other</option>
           </select>
         </div>

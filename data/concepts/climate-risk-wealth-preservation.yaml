@@ -1,0 +1,67 @@
+id: climate-risk-wealth-preservation
+name: Climate Risk as Wealth Preservation
+tagline: >
+  A service that makes the climate risk already embedded in family office
+  portfolios visible enough to create action, then connects that visibility
+  directly to investable responses.
+category: New Business Model
+layer: Enabler
+image: climate-risk-wealth-preservation.png
+topics:
+  - finance
+  - adaptation
+  - infrastructure
+
+details:
+  - title: The invisible exposure
+    description: >
+      Somewhere in a family office in Southeast Asia or coastal Florida, there
+      is a portfolio with $200 million in real estate, supply chain exposure,
+      and infrastructure assets that will lose meaningful value over the next
+      two decades. Their risk models are not built to see it.
+
+  - title: Climate risk audit
+    description: >
+      Maps a family's actual holdings against 1.5 to 3 degree warming scenarios.
+      Not abstract. Your property here loses this much value. Your supply chain
+      exposure here costs this much under drought models. Your holdings here
+      face this many fewer productive days per decade.
+
+  - title: Preservation plan, not a pitch
+    description: >
+      The output is not a pitch for climate funds. It is a preservation plan.
+      Five exposures, three interventions. Some are investments. Some are
+      insurance. Some are operational changes.
+
+  - title: Self-hedging vehicle
+    description: >
+      A vehicle where the family invests in solutions that directly hedge their
+      own exposed assets: coastal restoration that reduces storm surge where
+      they own beachfront, water infrastructure that secures the agricultural
+      regions their portfolio depends on.
+
+  - title: Inspired by
+    description: >
+      What insurance companies already do when they build sophisticated climate
+      risk models for their own underwriting. The same modeling capability,
+      turned outward and pointed at the family's portfolio instead of the
+      insurer's book.
+
+barrierSolutions:
+  - barrierId: risk-return
+    explanation: >
+      The framing shifts from "invest in climate" to "protect what you already
+      own." The return is measured against the counterfactual: what your
+      portfolio loses if you do nothing. When the baseline is erosion, even
+      modest returns look compelling.
+  - barrierId: complexity
+    explanation: >
+      The audit translates climate science into portfolio language the family
+      already understands. Not parts per million. Dollars at risk, by asset,
+      by scenario, by decade. The complexity is handled by the model, not
+      the investor.
+  - barrierId: impact-measurement
+    explanation: >
+      Impact is measured in the most concrete terms possible: change in
+      property value exposure, reduction in supply chain risk, insurance
+      cost savings. The family's own balance sheet is the scorecard.

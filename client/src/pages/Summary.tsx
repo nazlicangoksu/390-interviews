@@ -19,6 +19,8 @@ export default function Summary() {
   const [editRating, setEditRating] = useState(0);
   const [isSaving, setIsSaving] = useState(false);
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [isEditingNotes, setIsEditingNotes] = useState(false);
+  const [editNotesText, setEditNotesText] = useState('');
 
   useEffect(() => {
     if (!id) {
@@ -220,12 +222,71 @@ export default function Summary() {
       </section>
 
       {/* Running Notes */}
-      {session.notes && (
-        <section className="bg-white border border-stone-200 rounded-xl p-6 mb-8">
-          <h2 className="font-medium text-stone-800 mb-3">Interview Notes</h2>
+      <section className="bg-white border border-stone-200 rounded-xl p-6 mb-8">
+        <div className="flex justify-between items-center mb-3">
+          <h2 className="font-medium text-stone-800">Interview Notes</h2>
+          {!isEditingNotes && (
+            <button
+              onClick={() => {
+                setEditNotesText(session.notes || '');
+                setIsEditingNotes(true);
+              }}
+              className="text-xs px-3 py-1 text-amber-600 hover:text-amber-700 hover:bg-amber-50 rounded"
+            >
+              {session.notes ? 'Edit' : '+ Add Notes'}
+            </button>
+          )}
+        </div>
+        {isEditingNotes ? (
+          <div>
+            <textarea
+              value={editNotesText}
+              onChange={(e) => setEditNotesText(e.target.value)}
+              rows={8}
+              className="w-full px-3 py-2 border border-stone-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              placeholder="Paste or type interview notes, transcripts, observations..."
+            />
+            <div className="flex gap-2 justify-end mt-2">
+              <button
+                onClick={() => setIsEditingNotes(false)}
+                disabled={isSaving}
+                className="px-3 py-1 text-sm border border-stone-300 rounded-lg text-stone-600 hover:bg-stone-100"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={async () => {
+                  setIsSaving(true);
+                  try {
+                    const updatedSession = { ...session, notes: editNotesText };
+                    const res = await fetch(`/api/sessions/${session.id}`, {
+                      method: 'PUT',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(updatedSession),
+                    });
+                    if (res.ok) {
+                      setSession(updatedSession);
+                      setIsEditingNotes(false);
+                    }
+                  } catch (err) {
+                    console.error('Failed to save notes:', err);
+                  } finally {
+                    setIsSaving(false);
+                  }
+                }}
+                disabled={isSaving}
+                className="px-3 py-1 text-sm bg-amber-500 hover:bg-amber-600 text-white rounded-lg"
+              >
+                {isSaving ? 'Saving...' : 'Save'}
+              </button>
+            </div>
+          </div>
+        ) : session.notes ? (
           <p className="text-sm text-stone-600 whitespace-pre-wrap">{session.notes}</p>
-        </section>
-      )}
+        ) : (
+          <p className="text-sm text-stone-400 italic">No notes yet. Click "+ Add Notes" to add interview transcripts or observations.</p>
+        )}
+      </section>
 
       {/* Quick Stats */}
       <div className="grid grid-cols-3 gap-4 mb-8">

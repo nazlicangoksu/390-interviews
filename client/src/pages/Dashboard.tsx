@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSessions } from '../hooks/useData';
+import ConfirmDeleteModal from '../components/ConfirmDeleteModal';
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const { sessions, isLoading, deleteSession } = useSessions();
   const [filter, setFilter] = useState<'all' | 'completed' | 'in-progress'>('all');
+  const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
 
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleDateString('en-US', {
@@ -37,12 +39,18 @@ export default function Dashboard() {
         </p>
       </header>
 
-      <div className="mb-8">
+      <div className="mb-8 flex gap-4">
         <button
           onClick={() => navigate('/welcome')}
           className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-xl font-medium transition-colors"
         >
           Start New Interview
+        </button>
+        <button
+          onClick={() => navigate('/synthesis')}
+          className="bg-stone-700 hover:bg-stone-800 text-white px-6 py-3 rounded-xl font-medium transition-colors"
+        >
+          View Synthesis
         </button>
       </div>
 
@@ -123,11 +131,7 @@ export default function Dashboard() {
                     View
                   </button>
                   <button
-                    onClick={() => {
-                      if (confirm('Delete this session?')) {
-                        deleteSession(session.id);
-                      }
-                    }}
+                    onClick={() => setDeleteConfirm(session.id)}
                     className="text-red-500 hover:text-red-600 text-sm font-medium"
                   >
                     Delete
@@ -138,6 +142,18 @@ export default function Dashboard() {
           </div>
         )}
       </section>
+
+      {deleteConfirm && (
+        <ConfirmDeleteModal
+          title="Delete Session"
+          message="Are you sure you want to delete this session? This action cannot be undone."
+          onConfirm={() => {
+            deleteSession(deleteConfirm);
+            setDeleteConfirm(null);
+          }}
+          onCancel={() => setDeleteConfirm(null)}
+        />
+      )}
     </div>
   );
 }
