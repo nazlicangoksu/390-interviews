@@ -33,7 +33,7 @@ export default function Welcome() {
         participantId: generateParticipantId(),
         consentGiven: true,
       });
-      navigate('/notes');
+      navigate('/interview/notes');
     } catch (err) {
       console.error('Failed to create session:', err);
       alert('Failed to create session. Please try again.');
@@ -127,7 +127,7 @@ export default function Welcome() {
         <div className="flex gap-4">
           <button
             type="button"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/interview')}
             className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
           >
             Back

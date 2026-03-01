@@ -51,11 +51,11 @@ export default function Topics() {
 
   const handleContinue = () => {
     setTopics(selectedTopics, customTopics);
-    navigate('/concepts');
+    navigate('/interview/concepts');
   };
 
   if (!session) {
-    navigate('/');
+    navigate('/interview');
     return null;
   }
 
@@ -135,7 +135,7 @@ export default function Topics() {
 
       <div className="flex gap-4">
         <button
-          onClick={() => navigate('/welcome')}
+          onClick={() => navigate('/interview/welcome')}
           className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Back

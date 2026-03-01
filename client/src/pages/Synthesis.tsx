@@ -127,7 +127,7 @@ export default function Synthesis() {
     <div className="max-w-3xl mx-auto p-8">
       <header className="mb-10">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/interview')}
           className="text-stone-400 hover:text-stone-600 text-sm mb-4 inline-block"
         >
           &larr; Back to Dashboard

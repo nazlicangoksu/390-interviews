@@ -16,17 +16,17 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen bg-stone-50">
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/notes" element={<Notes />} />
-          <Route path="/investment-check" element={<InvestmentCheck />} />
-          <Route path="/topics" element={<Topics />} />
-          <Route path="/barriers" element={<Barriers />} />
-          <Route path="/concepts" element={<Concepts />} />
-          <Route path="/barrier-concepts" element={<BarrierConcepts />} />
-          <Route path="/summary/:id" element={<Summary />} />
-          <Route path="/synthesis" element={<Synthesis />} />
-          <Route path="/emerging-synthesis" element={<EmergingSynthesis />} />
+          <Route path="/" element={<EmergingSynthesis />} />
+          <Route path="/interview" element={<Dashboard />} />
+          <Route path="/interview/welcome" element={<Welcome />} />
+          <Route path="/interview/notes" element={<Notes />} />
+          <Route path="/interview/investment-check" element={<InvestmentCheck />} />
+          <Route path="/interview/topics" element={<Topics />} />
+          <Route path="/interview/barriers" element={<Barriers />} />
+          <Route path="/interview/concepts" element={<Concepts />} />
+          <Route path="/interview/barrier-concepts" element={<BarrierConcepts />} />
+          <Route path="/interview/summary/:id" element={<Summary />} />
+          <Route path="/interview/synthesis" element={<Synthesis />} />
         </Routes>
       </div>
     </BrowserRouter>

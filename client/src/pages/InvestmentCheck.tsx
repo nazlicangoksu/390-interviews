@@ -8,14 +8,14 @@ export default function InvestmentCheck() {
   const handleChoice = (hasInvested: boolean) => {
     setInvestmentStatus(hasInvested);
     if (hasInvested) {
-      navigate('/topics');
+      navigate('/interview/topics');
     } else {
-      navigate('/barriers');
+      navigate('/interview/barriers');
     }
   };
 
   if (!session) {
-    navigate('/');
+    navigate('/interview');
     return null;
   }
 
@@ -73,7 +73,7 @@ export default function InvestmentCheck() {
 
       <div className="mt-8">
         <button
-          onClick={() => navigate('/welcome')}
+          onClick={() => navigate('/interview/welcome')}
           className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Back

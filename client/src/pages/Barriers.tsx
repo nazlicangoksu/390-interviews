@@ -53,11 +53,11 @@ export default function Barriers() {
 
   const handleContinue = () => {
     setBarriers(selectedBarriers, customBarriers);
-    navigate('/barrier-concepts');
+    navigate('/interview/barrier-concepts');
   };
 
   if (!session) {
-    navigate('/');
+    navigate('/interview');
     return null;
   }
 
@@ -136,7 +136,7 @@ export default function Barriers() {
 
       <div className="flex gap-4">
         <button
-          onClick={() => navigate('/investment-check')}
+          onClick={() => navigate('/interview/investment-check')}
           className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Back

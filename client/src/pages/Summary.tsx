@@ -24,7 +24,7 @@ export default function Summary() {
 
   useEffect(() => {
     if (!id) {
-      navigate('/');
+      navigate('/interview');
       return;
     }
 
@@ -120,7 +120,7 @@ export default function Summary() {
       <div className="max-w-4xl mx-auto p-8">
         <p className="text-red-500 mb-4">{error || 'Session not found'}</p>
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/interview')}
           className="text-amber-600 hover:text-amber-700"
         >
           Back to Dashboard
@@ -152,7 +152,7 @@ export default function Summary() {
     <div className="max-w-4xl mx-auto p-8">
       <header className="mb-8">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/interview')}
           className="text-amber-600 hover:text-amber-700 text-sm mb-4 inline-block"
         >
           Back to Dashboard
@@ -618,7 +618,7 @@ export default function Summary() {
       {/* Actions */}
       <div className="flex gap-4">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/interview')}
           className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Back to Dashboard

@@ -41,13 +41,13 @@ export default function Dashboard() {
 
       <div className="mb-8 flex gap-4">
         <button
-          onClick={() => navigate('/welcome')}
+          onClick={() => navigate('/interview/welcome')}
           className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-xl font-medium transition-colors"
         >
           Start New Interview
         </button>
         <button
-          onClick={() => navigate('/synthesis')}
+          onClick={() => navigate('/interview/synthesis')}
           className="bg-stone-700 hover:bg-stone-800 text-white px-6 py-3 rounded-xl font-medium transition-colors"
         >
           View Synthesis
@@ -125,7 +125,7 @@ export default function Dashboard() {
                     {session.sessionConcepts?.length || 0} session concepts
                   </span>
                   <button
-                    onClick={() => navigate(`/summary/${session.id}`)}
+                    onClick={() => navigate(`/interview/summary/${session.id}`)}
                     className="text-amber-600 hover:text-amber-700 text-sm font-medium"
                   >
                     View

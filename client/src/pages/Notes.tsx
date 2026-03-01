@@ -11,7 +11,7 @@ export default function Notes() {
   useEffect(() => {
     if (isLoading) return;
     if (!session) {
-      navigate('/');
+      navigate('/interview');
       return;
     }
     setNotes(session.notes || '');
@@ -31,7 +31,7 @@ export default function Notes() {
 
   const handleContinue = async () => {
     await saveNotes();
-    navigate('/investment-check');
+    navigate('/interview/investment-check');
   };
 
   if (isLoading || !session) return null;
@@ -81,7 +81,7 @@ export default function Notes() {
 
       <div className="flex gap-4">
         <button
-          onClick={() => navigate('/welcome')}
+          onClick={() => navigate('/interview/welcome')}
           className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Back

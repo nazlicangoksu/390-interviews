@@ -362,11 +362,11 @@ export default function BarrierConcepts() {
 
   const handleEndSession = async () => {
     await endSession();
-    navigate('/');
+    navigate('/interview');
   };
 
   if (!session) {
-    navigate('/');
+    navigate('/interview');
     return null;
   }
 
@@ -505,7 +505,7 @@ export default function BarrierConcepts() {
       {/* Navigation */}
       <div className="flex gap-4">
         <button
-          onClick={() => navigate('/barriers')}
+          onClick={() => navigate('/interview/barriers')}
           className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Back to Barriers

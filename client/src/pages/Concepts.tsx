@@ -116,11 +116,11 @@ export default function Concepts() {
 
   const handleEndSession = async () => {
     await endSession();
-    navigate('/');
+    navigate('/interview');
   };
 
   if (!session) {
-    navigate('/');
+    navigate('/interview');
     return null;
   }
 
@@ -270,7 +270,7 @@ export default function Concepts() {
       {/* Navigation */}
       <div className="flex gap-4">
         <button
-          onClick={() => navigate('/topics')}
+          onClick={() => navigate('/interview/topics')}
           className="px-6 py-3 border border-stone-300 rounded-xl text-stone-600 hover:bg-stone-100 transition-colors"
         >
           Back to Topics
