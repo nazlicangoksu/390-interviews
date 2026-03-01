@@ -59,7 +59,7 @@ interface BarrierConceptModalProps {
 function BarrierConceptModal({
   concept,
   feedback,
-  barriers,
+  barriers: _barriers,
   selectedBarrierIds,
   onSave,
   onClose,
@@ -93,8 +93,6 @@ function BarrierConceptModal({
       selectedBarrierIds.includes(sol.barrierId)
     );
   }, [concept.barrierSolutions, selectedBarrierIds]);
-
-  const getBarrierById = (id: string) => barriers.find((b) => b.id === id);
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
@@ -244,19 +242,10 @@ interface BarrierConceptCardProps {
 function BarrierConceptCard({
   concept,
   feedback,
-  barriers,
-  selectedBarrierIds,
+  barriers: _barriers,
+  selectedBarrierIds: _selectedBarrierIds,
   onClick,
 }: BarrierConceptCardProps) {
-  // Get barriers this concept addresses that match user's selected barriers
-  const addressedBarriers = useMemo(() => {
-    if (!concept.barrierSolutions) return [];
-    return concept.barrierSolutions
-      .filter((sol) => selectedBarrierIds.includes(sol.barrierId))
-      .map((sol) => barriers.find((b) => b.id === sol.barrierId))
-      .filter(Boolean) as Barrier[];
-  }, [concept.barrierSolutions, selectedBarrierIds, barriers]);
-
   return (
     <div
       onClick={onClick}

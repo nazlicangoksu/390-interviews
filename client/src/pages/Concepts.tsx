@@ -50,7 +50,7 @@ const topicColors: Record<string, string> = {
 
 export default function Concepts() {
   const navigate = useNavigate();
-  const { concepts, updateConceptTopics, updateConcept, uploadConceptImage, refetchConcepts } = useConcepts();
+  const { concepts, updateConcept, uploadConceptImage, refetchConcepts } = useConcepts();
   const { topics } = useTopics();
   const { session, setConceptFeedback, endSession, isSaving, updateSession } = useSession();
   const [selectedConcept, setSelectedConcept] = useState<Concept | null>(null);
@@ -112,13 +112,7 @@ export default function Concepts() {
     }
   };
 
-  const handleAddTopic = async (conceptId: string, topicId: string) => {
-    const concept = concepts.find((c) => c.id === conceptId);
-    if (concept) {
-      const newTopics = [...concept.topics, topicId];
-      await updateConceptTopics(conceptId, newTopics);
-    }
-  };
+
 
   const handleEndSession = async () => {
     await endSession();
@@ -294,9 +288,7 @@ export default function Concepts() {
         <ConceptModal
           concept={selectedConcept}
           feedback={session.conceptFeedback?.[selectedConcept.id]}
-          topics={topics}
           onSave={handleSaveFeedback}
-          onAddTopic={handleAddTopic}
           onClose={() => setSelectedConcept(null)}
         />
       )}

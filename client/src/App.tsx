@@ -9,6 +9,7 @@ import Concepts from './pages/Concepts';
 import BarrierConcepts from './pages/BarrierConcepts';
 import Summary from './pages/Summary';
 import Synthesis from './pages/Synthesis';
+import EmergingSynthesis from './pages/EmergingSynthesis';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/barrier-concepts" element={<BarrierConcepts />} />
           <Route path="/summary/:id" element={<Summary />} />
           <Route path="/synthesis" element={<Synthesis />} />
+          <Route path="/emerging-synthesis" element={<EmergingSynthesis />} />
         </Routes>
       </div>
     </BrowserRouter>

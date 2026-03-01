@@ -811,6 +811,79 @@ app.delete('/api/sessions/:id', (req, res) => {
   }
 });
 
+// ── Questions (audience engagement on Emerging Synthesis page) ────────────────
+
+const QUESTIONS_FILE = path.join(DATA_DIR, 'questions.json');
+
+function loadQuestions(): any[] {
+  if (!fs.existsSync(QUESTIONS_FILE)) return [];
+  return JSON.parse(fs.readFileSync(QUESTIONS_FILE, 'utf-8'));
+}
+
+function saveQuestions(questions: any[]) {
+  fs.writeFileSync(QUESTIONS_FILE, JSON.stringify(questions, null, 2), 'utf-8');
+}
+
+app.get('/api/questions', (req, res) => {
+  const questions = loadQuestions();
+  const sectionId = req.query.sectionId as string;
+  res.json(sectionId ? questions.filter((q: any) => q.sectionId === sectionId) : questions);
+});
+
+app.post('/api/questions', (req, res) => {
+  const { sectionId, text, author } = req.body;
+  if (!sectionId || !text) {
+    return res.status(400).json({ error: 'sectionId and text are required' });
+  }
+  const question = {
+    id: `q-${Date.now()}`,
+    sectionId,
+    text: text.trim(),
+    author: author?.trim() || 'Anonymous',
+    timestamp: new Date().toISOString(),
+  };
+  const questions = loadQuestions();
+  questions.push(question);
+  saveQuestions(questions);
+  res.status(201).json(question);
+});
+
+app.delete('/api/questions/:id', (req, res) => {
+  const questions = loadQuestions().filter((q: any) => q.id !== req.params.id);
+  saveQuestions(questions);
+  res.json({ success: true });
+});
+
+// ── Reactions (insight engagement) ────────────────────────────────────────────
+
+const REACTIONS_FILE = path.join(DATA_DIR, 'reactions.json');
+
+function loadReactions(): Record<string, Record<string, number>> {
+  if (!fs.existsSync(REACTIONS_FILE)) return {};
+  return JSON.parse(fs.readFileSync(REACTIONS_FILE, 'utf-8'));
+}
+
+function saveReactions(reactions: Record<string, Record<string, number>>) {
+  fs.writeFileSync(REACTIONS_FILE, JSON.stringify(reactions, null, 2), 'utf-8');
+}
+
+app.get('/api/reactions', (_req, res) => {
+  res.json(loadReactions());
+});
+
+app.post('/api/reactions', (req, res) => {
+  const { sectionId, reaction } = req.body;
+  const allowed = ['surprising', 'seen-this', 'tell-more'];
+  if (!sectionId || !reaction || !allowed.includes(reaction)) {
+    return res.status(400).json({ error: 'sectionId and valid reaction required' });
+  }
+  const reactions = loadReactions();
+  if (!reactions[sectionId]) reactions[sectionId] = {};
+  reactions[sectionId][reaction] = (reactions[sectionId][reaction] || 0) + 1;
+  saveReactions(reactions);
+  res.json(reactions[sectionId]);
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

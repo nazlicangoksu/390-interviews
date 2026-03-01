@@ -1,0 +1,126 @@
+﻿GSB GEN 390 Proposal
+Nazli Goksu Seira
+How might we activate high net worth individuals to invest more in climate and nature-based solutions?
+Unlocking HNWI climate capital: Understanding barriers, mapping scientific priorities, and designing investable pathways
+
+
+
+
+PROJECT OVERVIEW
+This research investigates what prevents high net worth individuals and family offices from investing more capital in climate solutions. By understanding where they currently invest, where they want to invest but cannot find suitable opportunities, what barriers they face, what frameworks they use to evaluate opportunities, and where climate scientists identify the greatest need for catalytic capital, this study will identify what would unlock greater HNWI climate investment.
+The academic question: What constrains high net worth individual and family office investment in climate and nature-based solutions, where do investment gaps exist between capital demand and available opportunities, how does today's political landscape create or exacerbate these gaps, and what would catalyze greater deployment of private climate capital?
+By triangulating perspectives from investors, climate scientists, and policy analysts, the research will provide insights on current capital deployment patterns, unmet investment demand, decision-making frameworks, and the barriers—whether related to deal flow, technology readiness, business model viability, policy uncertainty, or political dynamics—that prevent greater HNWI investment in climate.
+The practical output: Five venture question briefs that address identified gaps where creating new investment opportunities could catalyze greater HNWI capital deployment into high-impact climate solutions, accounting for the current political and policy landscape.
+________________
+BACKGROUND
+Why I want to undertake this project:
+Before the GSB, I worked with high net worth individuals and family offices as clients at IDEO, designing briefs they could build ventures around. I'm likely heading back into this space, making decisions about which climate solutions to build and scale.For a venture studio, the most valuable insight isn't "HNWIs want more climate deals"—it's understanding the shape of what would actually get funded. What structures work? What risk profiles? What timelines? What would make a CIO comfortable? When you know the friction points, you can design ventures that overcome them. These gaps represent high-potential opportunities for new venture creation. The current political landscape adds complexity to climate investing. Policy priorities shift, regulations change, and government commitment to climate action varies. Understanding how sophisticated investors navigate this environment, and what opportunities they're seeking that don't exist yet, is essential.
+How this project contributes to my academic goals:
+* Climate Finance - Understanding how capital flows into climate solutions
+* Family Office Strategy - Learning how HNWI’s make investment decisions in climate
+* Political Economy - Understanding how policy landscapes shape investment priorities in climate
+* Impact Investing - Designing  frameworks for evaluating financial and environmental returns
+* Venture Capital - Mapping where are the early-stage opportunities and market gap in climate
+Previous GSB coursework this builds on:
+* GSBGID-501: Climate Finance in Private Markets - Understanding the climate solution landscape and economics of climate investing through the lens of private markets
+* GSB Impact Fund (Investment Director) - Hands-on experience deploying capital to early-stage climate startups and evaluating impact investment opportunities across multiple climate sectors
+* GSBGEN-312: I'm Just a Bill - Understanding how policy impacts markets and the real-world consequences of policy choices, particularly relevant for assessing political risk in climate investing
+* FINANCE-321: Investment Management - Investment evaluation and portfolio construction frameworks, including how investors develop and apply decision-making criteria
+________________
+GOAL/OBJECTIVES
+Primary Objective: Identify 3-5 high-priority climate areas where HNWIs and family offices want to deploy capital but cannot find suitable investment opportunities, or face a significant barrier. Document why these gaps exist, and quantify the magnitude of unmet demand.
+Secondary Objectives:
+1. Understand gap/barrier drivers: For each identified gap or barrier, determine root causes—whether technology readiness, business model viability, policy uncertainty, insufficient deal flow, or misalignment between investor expectations and available structures.
+2. Assess political and policy influence: Document how the current political landscape creates, exacerbates, or could resolve these investment gaps, with particular attention to areas where policy shifts would unlock or constrain capital.
+3. Surface decision frameworks: Through gap-focused conversations, identify the 5-10 core questions HNW climate/potential climate investors ask when evaluating opportunities—understanding what makes something investable vs. interesting-but-unfundable.
+4. Validate and quantify: Cross-reference interview findings with public market data to validate patterns and size the unmet demand where possible
+Success Criteria:
+* Validated list of 3-5 investment gaps with clear documentation of why each exists
+* Quantified estimate of unmet demand for at least 2-3 gaps
+* Analysis of political/policy factors shaping each gap
+* Decision framework of 5-10 questions that distinguish investable from unfundable opportunities
+* Five venture question briefs that address the highest-potential gaps
+________________
+DELIVERABLES
+Primary Deliverable: Research Paper (30-40 pages)
+Part 1: The Setup
+Where does climate capital flow today, and where does it get stuck? This section maps the current landscape and identifies what we don't yet understand about HNWI climate investing.
+Three groups hold different pieces of the puzzle and I intend to interview each:
+* 15-20 HNWI investors who can speak to where capital goes and where they want to invest
+* 8-12 climate scientists who know where impact is highest per dollar
+* 5-8 policy experts who know where politics opens or closes doors
+In this part I will also map the current landscape using public market data and identify what we don't yet understand about HNWI climate investing.
+Part 2: Insights
+In this section I will outline what I learned from research. Investors who tell me where their capital goes today, where they wish it could go, why gaps exist, and how they actually make decisions. Scientists who tell me which climate interventions matter most, which are underfunded, and where early capital could unlock disproportionate impact. Policy experts who tell me how political dynamics shape what's investable, where barriers exist, and where momentum is building.
+Part 3: Overlaps
+This section will examine where these three perspectives align. Mapping investor demand × scientific priority × policy viability reveals opportunity spaces that wouldn't be visible looking at any single perspective. Some areas check all three boxes. Others check none. The misalignments explain why certain critical solutions can't get funded and why certain funded solutions don't matter as much as we think.
+Part 4: Decision Framework 
+A distilled set of questions that HNWI climate investors ask (beyond what’s expected) when evaluating opportunities, drawn from investor interviews. Designed as a practical reference for evaluating new venture concepts against HNWI investment criteria.
+Part 5: Opportunities
+Based on the overlaps, I will outline five highest-potential opportunity spaces for new climate ventures—framed as questions, not solutions. Each represents a place where creating the right investment vehicle could unlock significant capital for high-impact climate work. Implications for the people who can act on this: entrepreneurs building companies, policymakers removing barriers, philanthropists deploying catalytic capital.
+Secondary Deliverable: 5 Climate Venture Question Briefs (10-15 pages each)
+Each venture brief will frame a high-potential opportunity at the intersection of investor demand, scientific priority, and policy viability. These briefs define the question and problem space that warrants deeper exploration, rather than prescribing specific solutions.
+1. Executive Summary
+* Core venture question being explored
+* Investment gap, scientific priority, and policy context
+* Why this question is urgent and timely
+2. Problem & Opportunity
+* Specific climate problem requiring solution
+* Scientific evidence for intervention priority
+* Market gap identified from investor research & Size of unmet capital demand
+* Why current solutions don't exist or are inadequate
+3. Climate Impact & Scientific Validation
+* Environmental impact potential and measurement frameworks
+* Scientific evidence supporting this intervention area
+* Time-sensitivity and what success would look like
+4. Market & Policy Landscape
+* Potential target customers and market size
+* Public data validation of market size and competitive landscape
+* Competitive landscape and why this space is underserved
+* Policy tailwinds, headwinds, and regulatory considerations
+* What would need to be true for a solution to gain traction
+5. Key Uncertainties & Questions to Resolve
+* Technology, market, and policy uncertainties requiring exploration
+* Critical questions that need answers before building a solution
+* What would need to be discovered or proven for this to work
+6. Investment Thesis
+* Why this problem space meets HNWI criteria (based on research)
+* Alignment with scientific priorities
+* Potential return profile and exit opportunities & Role of different capital types
+* What further work is needed to develop an investable solution
+Format:
+* Academic research paper with properly cited sources, anonymized interview data, visual frameworks and triangulation analysis
+* 5 professional venture question briefs suitable for guiding deeper exploration at a venture studio
+* All briefs grounded in empirical research from investors, climate scientists, and policy analysts
+* Briefs frame the questions and problem spaces that warrant building ventures around, not the solutions themselves
+________________
+TIMELINE
+Weeks 1-2: Setup
+* Complete literature review (climate finance, climate science priorities, policy landscape)
+* Design sacrificial concepts for interviews
+* Develop interview protocols for three stakeholder groups
+* Outreach to 12-18 investors, 5-8 policy analysts, 8-12 climate scientists
+* Establish baseline from public data: Pull PitchBook data on climate deals with family office or individual investor participation (last 3-5 years), segmented by sub-sector, stage, geography, and deal size. Identify which sub-sectors show strong activity and which show little to none. Cross-reference with Project Drawdown priorities to surface potential mismatches between capital flows and climate impact.
+Weeks 3-5: First interview round
+* Conduct 6-8 investor interviews
+* Conduct 3-4 policy analyst interviews
+* Conduct 4-5 climate scientist interviews
+* Begin analysis of investment gaps, scientific priorities, and patterns
+* Milestone: Interim findings memo with preliminary venture questions (end of Week 5)
+Weeks 6-7: Complete interviews and analysis
+* Complete remaining interviews (target: 10-15 investors, 5-8 analysts, 8-10 scientists)
+* Validate interview findings against public data: When investors identify gaps, check deal flow data to confirm and quantify. When policy uncertainty is cited, cross-reference with CPI and BNEF policy trackers.
+* Finalize triangulation analysis mapping investor demand × scientific priority × policy viability
+* Select 5 venture questions to develop into full briefs
+* Begin drafting research paper and venture briefs
+Week 8: First drafts
+* Complete research paper draft including triangulation analysis
+* Develop 3-5 venture question briefs
+* Milestone: Submit drafts to faculty sponsor
+Week 9: Refinement
+* Incorporate faculty feedback
+* Complete all 5 venture briefs
+* Develop visual frameworks
+Week 10: Finalization
+* Final refinement of all deliverables
+* Final deliverables due: Beginning of finals week
