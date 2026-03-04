@@ -233,8 +233,8 @@ export const designOpportunities: DesignOpportunity[] = [
       'Everyone building climate investment products is building one product and hoping it appeals broadly. In developing economies, the conversation starts and ends with risk exposure to existing assets. The next generation enters through conviction and identity. Philanthropists enter through catalytic capital frameworks they have never been shown. Each of these populations gets stuck at a completely different point.',
     ],
     proposals: [
-      'A Western track built around peer visibility: curated co-investment, the diligence commons creating social proof, visible anchors in every deal. An Asian track built around business logic: risk audits tied to existing holdings, investments that map to operating businesses, no mission language.',
-      'A developing-economy track built around asset protection: risk prediction bundled with resilience, preservation framing, solutions that work without carbon markets. A next-gen track built around authority: governance structures with real decision rights over a defined allocation, small enough to be low-risk for the family, large enough to build a real track record.',
+      'A peer-visibility track built around social proof: curated co-investment, the diligence commons, visible anchors in every deal. A risk-mitigation track built around business logic: risk audits tied to existing holdings, investments that map to operating businesses, no mission language.',
+      'An asset-protection track built around preservation: risk prediction bundled with resilience, solutions that work without carbon markets. A next-gen track built around authority: governance structures with real decision rights over a defined allocation, small enough to be low-risk for the family, large enough to build a real track record.',
       'A philanthropist track for those who do not know charitable capital can fund market-driven solutions: the due diligence commons plus deal-level transaction support. Showing them the path from grant-making to catalytic investing.',
     ],
   },
