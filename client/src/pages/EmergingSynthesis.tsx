@@ -370,7 +370,7 @@ function ChapterPage({
     <div
       ref={ref}
       id={id}
-      className={`min-h-[62vh] md:min-h-[72vh] flex items-center px-6 md:px-12 lg:px-20 py-20 relative overflow-hidden ${field}`}
+      className={`chapter-page min-h-[62vh] md:min-h-[72vh] flex items-center px-6 md:px-12 lg:px-20 py-20 relative overflow-hidden ${field}`}
     >
       <div className={`relative z-10 max-w-5xl w-full transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="flex items-center gap-4 mb-8 md:mb-12">
@@ -390,7 +390,7 @@ function ChapterPage({
 function VoicePage({ text, field }: { text: string; field: string }) {
   const { ref, isVisible } = useInView(0.3);
   return (
-    <div ref={ref} className={`flex items-center justify-center px-6 md:px-16 py-28 md:py-40 ${field}`}>
+    <div ref={ref} className={`voice-page flex items-center justify-center px-6 md:px-16 py-28 md:py-40 ${field}`}>
       <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <p className="label opacity-60 mb-8">What I heard in conversations…</p>
         <p className="headline text-[28px] md:text-[44px] lg:text-[52px]">
@@ -626,10 +626,10 @@ function DesignCard({
       className={`transition-all duration-700 flex flex-col ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       style={{ transitionDelay: `${(index % 2) * 80}ms` }}
     >
-      <div className={`w-full flex-1 flex flex-col text-left border-2 border-black transition-colors duration-300 ${dark ? 'bg-black text-white' : 'bg-white text-black hover:bg-black hover:text-white'}`}>
+      <div className={`opp-card w-full flex-1 flex flex-col text-left border-2 border-black transition-colors duration-300 ${dark ? 'bg-black text-white' : 'bg-white text-black hover:bg-black hover:text-white'}`}>
         <button onClick={() => setOpen(!open)} className="w-full flex-1 text-left p-7 md:p-9">
           <div className="flex items-center gap-3 mb-5">
-            <span className={`display text-2xl ${dark ? 'text-yellow' : 'text-black group-hover:text-yellow'}`}>{num}</span>
+            <span className={`opp-num display text-2xl ${dark ? 'text-yellow' : 'text-black group-hover:text-yellow'}`}>{num}</span>
           </div>
           <p className="headline text-[22px] md:text-[27px] pr-4">{opportunity.question}</p>
           {!open && (
@@ -658,7 +658,7 @@ function DesignCard({
               {opportunity.proposals.map((proposal, i) => (
                 <div
                   key={i}
-                  className={`flex gap-4 ${open ? 'reveal-up' : ''}`}
+                  className={`opp-proposal flex gap-4 ${open ? 'reveal-up' : ''}`}
                   style={open ? { animationDelay: `${150 + i * 130}ms` } : undefined}
                 >
                   <span className="shrink-0 mt-1"><ProposalMark variant={i} /></span>
@@ -804,7 +804,7 @@ function DataReveal() {
   }, []);
 
   return (
-    <section ref={ref} className="bg-black text-white px-6 md:px-12 py-24 md:py-32">
+    <section ref={ref} className="data-reveal bg-black text-white px-6 md:px-12 py-24 md:py-32">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <span className="label text-yellow">The gap, in two numbers</span>
@@ -1165,7 +1165,7 @@ export default function EmergingSynthesis() {
 
       <section className="bg-paper px-6 md:px-12 py-24 md:py-32">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="opp-grid grid grid-cols-1 md:grid-cols-2 gap-6">
             {designOpportunities.map((opp, i) => (
               <DesignCard key={opp.id} opportunity={opp} index={i} />
             ))}
