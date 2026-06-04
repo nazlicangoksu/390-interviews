@@ -445,7 +445,7 @@ function ReactionChips({
   ];
 
   return (
-    <div className="mt-10 pt-6 rule border-black/15">
+    <div className="no-print mt-10 pt-6 rule border-black/15">
       <div className="flex flex-wrap gap-2">
         {quickChips.map((chip) => {
           const count = sectionReactions[chip.key] || 0;
@@ -633,19 +633,19 @@ function DesignCard({
           </div>
           <p className="headline text-[22px] md:text-[27px] pr-4">{opportunity.question}</p>
           {!open && (
-            <p className="label mt-5 text-current opacity-50">{opportunity.title}</p>
+            <p className="no-print label mt-5 text-current opacity-50">{opportunity.title}</p>
           )}
         </button>
 
         <button
           onClick={() => setOpen(!open)}
-          className={`w-full flex items-center justify-between px-7 md:px-9 py-4 rule ${dark ? 'border-white/20' : 'border-black/15'}`}
+          className={`no-print w-full flex items-center justify-between px-7 md:px-9 py-4 rule ${dark ? 'border-white/20' : 'border-black/15'}`}
         >
           <span className={`label ${dark ? 'text-yellow' : 'text-current'}`}>{open ? 'Close' : 'Explore this opportunity'}</span>
           <span className={`display text-lg ${dark ? 'text-yellow' : ''}`}>{open ? '–' : '+'}</span>
         </button>
 
-        <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className={`opp-body overflow-hidden transition-all duration-500 ${open ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-7 md:px-9 pb-9 pt-2">
             <h4 className="display text-xl md:text-2xl text-white mb-6">{opportunity.title}</h4>
             <div className="space-y-4 mb-8">
@@ -700,7 +700,7 @@ function Poll({
   return (
     <section
       ref={ref}
-      className={`bg-paper px-6 md:px-12 py-16 md:py-20 transition-all duration-700 ${
+      className={`no-print bg-paper px-6 md:px-12 py-16 md:py-20 transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
     >
@@ -789,6 +789,19 @@ function DataReveal() {
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [isVisible]);
+
+  // Always show final figures when printing / saving to PDF
+  useEffect(() => {
+    const finish = () => setP(1);
+    window.addEventListener('beforeprint', finish);
+    const mq = window.matchMedia('print');
+    const onChange = (e: MediaQueryListEvent) => { if (e.matches) finish(); };
+    mq.addEventListener?.('change', onChange);
+    return () => {
+      window.removeEventListener('beforeprint', finish);
+      mq.removeEventListener?.('change', onChange);
+    };
+  }, []);
 
   return (
     <section ref={ref} className="bg-black text-white px-6 md:px-12 py-24 md:py-32">
@@ -983,7 +996,7 @@ export default function EmergingSynthesis() {
             </p>
             <p className="label text-black mt-8">By Nazlican Goksu Seira</p>
 
-            <div className="mt-9 flex items-start gap-4 max-w-xl border-t border-black/15 pt-7">
+            <div className="no-print mt-9 flex items-start gap-4 max-w-xl border-t border-black/15 pt-7">
               <button
                 onClick={toggleAudio}
                 aria-label={playing ? 'Pause ambient sound' : 'Play ambient sound'}
