@@ -592,9 +592,16 @@ function ProposalMark({ variant }: { variant: number }) {
   return (
     <span className="pmark" aria-hidden="true">
       <span className="pmark-grid">
-        {Array.from({ length: 9 }, (_, i) => (
-          <i key={i} className={i === 4 ? 'b' : ''} />
-        ))}
+        {Array.from({ length: 9 }, (_, i) => {
+          const breatheDelay: Record<number, string> = { 0: '0s', 5: '0.6s', 7: '1.2s' };
+          return (
+            <i
+              key={i}
+              className={i === 4 ? 'b' : i in breatheDelay ? 'br' : ''}
+              style={i in breatheDelay ? { animationDelay: breatheDelay[i] } : undefined}
+            />
+          );
+        })}
       </span>
     </span>
   );

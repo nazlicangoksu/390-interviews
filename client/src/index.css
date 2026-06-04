@@ -117,15 +117,21 @@ body {
 @keyframes revealUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 .reveal-up { animation: revealUp 0.5s cubic-bezier(0.16,1,0.3,1) both; }
 
-/* Proposal marks: a distinct, quiet brand glyph per idea, in a fixed box so text aligns */
+/* Proposal marks: a distinct brand glyph per idea, fixed box so text aligns, gentle motion */
+@keyframes tileBreathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes barWave { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.55); } }
+@keyframes ringPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.18); opacity: 0.5; } }
 .pmark { width: 16px; height: 16px; flex: none; display: flex; align-items: center; justify-content: center; }
 .pmark-grid { display: grid; grid-template-columns: repeat(3, 4px); grid-auto-rows: 4px; gap: 1px; }
 .pmark-grid i { display: block; background: var(--yellow); }
 .pmark-grid i.b { background: #0a0a0a; }
+.pmark-grid i.br { animation: tileBreathe 3.4s ease-in-out infinite; }
 .pmark-bars { display: flex; align-items: flex-end; gap: 2px; height: 14px; }
-.pmark-bars i { width: 3px; background: var(--yellow); }
+.pmark-bars i { width: 3px; background: var(--yellow); transform-origin: bottom; animation: barWave 3s ease-in-out infinite; }
+.pmark-bars i:nth-child(2) { animation-delay: 0.4s; }
+.pmark-bars i:nth-child(3) { animation-delay: 0.8s; }
 .pmark-ring { position: relative; width: 14px; height: 14px; }
-.pmark-ring::before { content: ''; position: absolute; inset: 0; border: 1.5px solid var(--yellow); border-radius: 50%; }
+.pmark-ring::before { content: ''; position: absolute; inset: 0; border: 1.5px solid var(--yellow); border-radius: 50%; transform-origin: center; animation: ringPulse 3.2s ease-in-out infinite; }
 .pmark-ring::after { content: ''; position: absolute; inset: 5px; background: var(--yellow); border-radius: 50%; }
 
 @keyframes barIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
@@ -164,6 +170,6 @@ body {
 .bg-cream { background-color: #f5f0e8; }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-up, .bar.lit, .reveal-up { animation: none; transform: none; opacity: 1; }
+  .animate-fade-up, .bar.lit, .reveal-up, .pmark-grid i.br, .pmark-bars i, .pmark-ring::before { animation: none; transform: none; opacity: 1; }
   .erode-tile { animation: none; opacity: 0; }
 }
