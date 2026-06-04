@@ -30,3 +30,19 @@ data/sessions/
 
 # Synthesis cache
 data/synthesis-cache/
+.vercel
+.env*.local
+
+# Workspace cruft (not part of the site)
+node_modules 2/
+package copy.json
+package-lock copy.json
+.Rhistory
+.mcp.json
+generate-pdf.mjs
+/*.pdf
+/*.html
+390_screenshots/
+390 images/
+website images/
+u4358721779_*.png
